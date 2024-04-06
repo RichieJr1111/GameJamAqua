@@ -60,7 +60,7 @@ public class PlayerSpawner : MonoBehaviour
         }
         if (GameObject.FindGameObjectWithTag("GoodGuy") == null && currentCount1 < 0 && currentCount2 < 0)
         {
-
+            //gameOver
         }
     }
 

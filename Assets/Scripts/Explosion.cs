@@ -9,7 +9,7 @@ public class Explosion : MonoBehaviour
         if (other.tag == "GoodGuy")
         {
             other.GetComponent<PlayerAlly>().Health -= 3;
-            other.GetComponent<PlayerAlly>().Speed = 0;
+            //other.GetComponent<PlayerAlly>().Speed = 0;
         }
     }
 }

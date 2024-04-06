@@ -18,7 +18,7 @@ public class PlayerAlly : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.parent.GetChild(1).position = new Vector3(0.5f * (Health - MaxHealth) / MaxHealth, 0.5f, 0) + transform.position;
+        transform.parent.GetChild(1).position = new Vector3(0.4f * (Health - MaxHealth) / MaxHealth, 0.5f, 0) + transform.position;
         transform.parent.GetChild(2).position = new Vector3(0, 0.5f, 0) + transform.position;
         transform.parent.GetChild(1).localScale = new Vector3(0.8f * (Health / MaxHealth), 0.1f, 0);
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -78,6 +78,10 @@ public class PlayerAlly : MonoBehaviour
         if (Health > 0)
         {
             beingAttacked.GetComponent<BadChemicals>().Heatlh--; //might have diff sciprts add switch statement later
+            if (beingAttacked.GetComponent<BadChemicals>().Heatlh < 0)
+            {
+                beingAttacked.GetComponent<BadChemicals>().Heatlh = 0;
+            }
         }
     }
 

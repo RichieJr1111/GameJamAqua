@@ -52,8 +52,8 @@ public class BadChemicals : MonoBehaviour
         //death animation
         transform.GetComponent<Animator>().SetBool("isDead", true);
         gameObject.tag = "Untagged";
-        yield return new WaitForSeconds(1f);
         increasestat.Money++;
+        yield return new WaitForSeconds(1f);
         Destroy(transform.parent.gameObject);
     }
 }

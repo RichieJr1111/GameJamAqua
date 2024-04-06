@@ -22,7 +22,8 @@ public class increasestat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        biorem1 = bioremob1.GetComponent<PlayerAlly>();
+        biorem1 = bioremob1.transform.GetChild(0).gameObject.GetComponent<PlayerAlly>();
+        biorem2 = bioremob2.transform.GetChild(0).gameObject.GetComponent<PlayerAlly>();
     }
 
     // Update is called once per frame
