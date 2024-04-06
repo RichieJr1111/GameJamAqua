@@ -14,19 +14,25 @@ public class JukeBox : MonoBehaviour
     }
 
     // Update is called once per frame
-    public static void WhatShouldPlay()
+    public void WhatShouldPlay()
     {
-        if (Time.timeScale <= 0)
+        if (Time.timeScale <= 0 && !Shop.isPlaying)
         {
             //play shop
+            Battle.Stop();
+            Plan.Stop();
         }
-        else if (GameObject.FindGameObjectWithTag("GoodGuy") == null)
+        else if (GameObject.FindGameObjectWithTag("GoodGuy") == null && !Plan.isPlaying)
         {
             //play plan
+            Plan.Play();
+            Battle.Stop();
         }
-        else
+        else if(!Battle.isPlaying)
         {
             //play battle
+            Battle.Play();
+            Plan.Stop();
         }
     }
 }

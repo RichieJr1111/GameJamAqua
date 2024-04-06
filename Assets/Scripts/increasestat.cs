@@ -19,9 +19,11 @@ public class increasestat : MonoBehaviour
     public static int Money = 0;
     public GameObject[] EnemyPrefabs;
     public GameObject SpeedUpButtons;
+    public JukeBox Jukebox;
     // Start is called before the first frame update
     void Start()
     {
+        Jukebox = GameObject.Find("Jukebox").GetComponent<JukeBox>();
         biorem1 = bioremob1.transform.GetChild(0).gameObject.GetComponent<PlayerAlly>();
         biorem2 = bioremob2.transform.GetChild(0).gameObject.GetComponent<GoodExploScript>();
     }
@@ -58,7 +60,7 @@ public class increasestat : MonoBehaviour
     public void NextLevel()
     {
         SpawnerObj.GetComponent<PlayerSpawner>().Reset();
-        JukeBox.WhatShouldPlay();
+        Jukebox.WhatShouldPlay();
         Time.timeScale = 1f;
         SpeedUpButtons.transform.GetChild(0).gameObject.SetActive(false);
         SpeedUpButtons.transform.GetChild(1).gameObject.SetActive(true);

@@ -102,6 +102,7 @@ public class BadChemicals : MonoBehaviour
     private IEnumerator Dying()
     {
         //death animation
+        transform.parent.GetComponent<AudioSource>().Play();
         transform.GetComponent<Animator>().SetBool("isDead", true);
         gameObject.tag = "Untagged";
         increasestat.Money++;
