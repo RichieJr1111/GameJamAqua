@@ -57,6 +57,7 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     break;
             }
+            JukeBox.WhatShouldPlay();
         }
         if (GameObject.FindGameObjectWithTag("GoodGuy") == null && currentCount1 < 0 && currentCount2 < 0)
         {

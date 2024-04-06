@@ -9,6 +9,8 @@ public class BadChemicals : MonoBehaviour
     public float Speed;
     public Vector3 dest;
     private Rigidbody2D rb;
+    public bool anAttacker = false;
+    public bool isAttacking = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,13 +39,63 @@ public class BadChemicals : MonoBehaviour
         transform.parent.GetChild(2).position = new Vector3(0, 0.5f, 0) + transform.position;
         transform.parent.GetChild(1).localScale = new Vector3(0.8f * (Heatlh / MaxHeatlh), 0.1f, 0);
 
+        if (Heatlh <= 0 && transform.GetComponent<Animator>().GetBool("isDead") == false)
+        {
+            StartCoroutine(Dying());
+        }
+        else if (anAttacker)
+        {        
+            if (GameObject.FindGameObjectWithTag("GoodGuy") != null)
+            {
+                GameObject[] goodGuys = GameObject.FindGameObjectsWithTag("GoodGuy");
+                GameObject closestGood = goodGuys[0];
+                float closeDist = Vector3.Distance(goodGuys[0].transform.position, transform.position);
+                foreach (GameObject Good in goodGuys)
+                {
+                    float Dist = Vector3.Distance(Good.transform.position, transform.position);
+                    if (Dist < closeDist)
+                    {
+                        closeDist = Dist;
+                        closestGood = Good;
+                    }
+                }
+                dest = closestGood.transform.position;
+                if (!isAttacking && closeDist < 0.8f)
+                {
+                    isAttacking = true;
+                    StartCoroutine(Attack(closestGood));
+                }
+            }
+            Vector3 lookTarg = dest;
+            lookTarg.z = 0f;
+
+            Vector3 objectPos = transform.position;
+            lookTarg.x = lookTarg.x - objectPos.x;
+            lookTarg.y = lookTarg.y - objectPos.y;
+
+            float angle = Mathf.Atan2(lookTarg.y, lookTarg.x) * Mathf.Rad2Deg - 150f;
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        }
+
         //add force towards dest
         rb.velocity = Vector2.ClampMagnitude(rb.velocity, Speed);
         //Debug.Log(dest);
         rb.AddForce((dest - transform.position) * Time.deltaTime * 100);
-        if (Heatlh <= 0 && transform.GetComponent<Animator>().GetBool("isDead") == false)
+    }
+
+    private IEnumerator Attack(GameObject beingAttacked)
+    {
+        transform.GetComponent<Animator>().SetBool("isAttacking", true);
+        yield return new WaitForSeconds(1f);
+        transform.GetComponent<Animator>().SetBool("isAttacking", false);
+        isAttacking = false;
+        if (Heatlh > 0)
         {
-            StartCoroutine(Dying());
+            beingAttacked.GetComponent<PlayerAlly>().Health--; //might have diff sciprts add switch statement later
+            if (beingAttacked.GetComponent<PlayerAlly>().Health < 0)
+            {
+                beingAttacked.GetComponent<PlayerAlly>().Health = 0;
+            }
         }
     }
 

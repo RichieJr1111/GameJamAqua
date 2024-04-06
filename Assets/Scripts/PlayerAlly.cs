@@ -73,7 +73,9 @@ public class PlayerAlly : MonoBehaviour
 
     private IEnumerator Attack(GameObject beingAttacked)
     {
+        transform.GetComponent<Animator>().SetBool("isAttacking", true);
         yield return new WaitForSeconds(1f);
+        transform.GetComponent<Animator>().SetBool("isAttacking", false);
         isAttacking = false;
         if (Health > 0)
         {

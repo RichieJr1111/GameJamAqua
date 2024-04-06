@@ -58,6 +58,7 @@ public class increasestat : MonoBehaviour
     public void NextLevel()
     {
         SpawnerObj.GetComponent<PlayerSpawner>().Reset();
+        JukeBox.WhatShouldPlay();
         Time.timeScale = 1f;
         SpeedUpButtons.transform.GetChild(0).gameObject.SetActive(false);
         SpeedUpButtons.transform.GetChild(1).gameObject.SetActive(true);
