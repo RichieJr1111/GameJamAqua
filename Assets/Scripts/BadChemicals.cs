@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BadChemicals : MonoBehaviour
 {
+    public float MaxHeatlh = 3;
     public float Heatlh;
     public float Speed;
     public Vector3 dest;
@@ -27,6 +28,10 @@ public class BadChemicals : MonoBehaviour
 
     void Update()
     {
+        transform.parent.GetChild(1).position = new Vector3(0.5f * (Heatlh - MaxHeatlh) / MaxHeatlh, 0.5f, 0) + transform.position;
+        transform.parent.GetChild(2).position = new Vector3(0, 0.5f, 0) + transform.position;
+        transform.parent.GetChild(1).localScale = new Vector3(0.8f * (Heatlh / MaxHeatlh), 0.1f, 0);
+
         //add force towards dest
         rb.velocity = Vector2.ClampMagnitude(rb.velocity, Speed);
         //Debug.Log(dest);
@@ -42,6 +47,6 @@ public class BadChemicals : MonoBehaviour
         //death animation
         gameObject.tag = "Untagged";
         yield return new WaitForSeconds(1f);
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
 }

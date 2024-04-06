@@ -6,6 +6,7 @@ public class PlayerAlly : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float Speed = 3f;
+    public float MaxHealth = 3f;
     public float Health = 3f;
     private bool isAttacking = false;
     // Start is called before the first frame update
@@ -17,6 +18,9 @@ public class PlayerAlly : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.parent.GetChild(1).position = new Vector3(0.5f * (Health - MaxHealth) / MaxHealth, 0.5f, 0) + transform.position;
+        transform.parent.GetChild(2).position = new Vector3(0, 0.5f, 0) + transform.position;
+        transform.parent.GetChild(1).localScale = new Vector3(0.8f * (Health / MaxHealth), 0.1f, 0);
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject closestEnemy = null;
         float closeDist = 999;
@@ -47,7 +51,7 @@ public class PlayerAlly : MonoBehaviour
         lookTarg.x = lookTarg.x - objectPos.x;
         lookTarg.y = lookTarg.y - objectPos.y;
 
-        float angle = Mathf.Atan2(lookTarg.y, lookTarg.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(lookTarg.y, lookTarg.x) * Mathf.Rad2Deg - 90;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
         if (closeDist < 1f && !isAttacking)
@@ -77,6 +81,6 @@ public class PlayerAlly : MonoBehaviour
         //death animation
         gameObject.tag = "Untagged";
         yield return new WaitForSeconds(1f);
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
 }
