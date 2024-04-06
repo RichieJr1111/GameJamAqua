@@ -8,7 +8,7 @@ public class increasestat : MonoBehaviour
     public GameObject bioremob1;
     public PlayerAlly biorem1;
     public GameObject bioremob2;
-    public PlayerAlly biorem2;
+    public GoodExploScript biorem2;
     public GameObject bioremob3;
     public PlayerAlly biorem3;
     public GameObject SpawnerObj;
@@ -23,7 +23,7 @@ public class increasestat : MonoBehaviour
     void Start()
     {
         biorem1 = bioremob1.transform.GetChild(0).gameObject.GetComponent<PlayerAlly>();
-        biorem2 = bioremob2.transform.GetChild(0).gameObject.GetComponent<PlayerAlly>();
+        biorem2 = bioremob2.transform.GetChild(0).gameObject.GetComponent<GoodExploScript>();
     }
 
     // Update is called once per frame

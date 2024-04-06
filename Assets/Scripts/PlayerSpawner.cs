@@ -44,12 +44,13 @@ public class PlayerSpawner : MonoBehaviour
                         //play error sound effect
                     }
                     break;
-                case ("Ally2"):
+                case ("GoodExplosion"):
                     if (currentCount2 > 0)
                     {
                         currentCount2--;
                         GameObject temp = Instantiate(selected, Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0)), selected.transform.rotation);
                         temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y, 0);
+                        Destroy(temp, 1f);
                     }
                     else
                     {
@@ -79,7 +80,7 @@ public class PlayerSpawner : MonoBehaviour
                     //play error sound effect
                 }
                 break;
-            case ("Ally2"):
+            case ("GoodExplosion"):
                 if (currentCount2 > 0)
                 {
                     selected = ally;
