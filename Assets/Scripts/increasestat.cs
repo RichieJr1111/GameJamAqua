@@ -18,6 +18,7 @@ public class increasestat : MonoBehaviour
     public static int Level = 1;
     public static int Money = 0;
     public GameObject[] EnemyPrefabs;
+    public GameObject SpeedUpButtons;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +57,10 @@ public class increasestat : MonoBehaviour
     public void NextLevel()
     {
         SpawnerObj.GetComponent<PlayerSpawner>().Reset();
+        Time.timeScale = 1f;
+        SpeedUpButtons.transform.GetChild(0).gameObject.SetActive(false);
+        SpeedUpButtons.transform.GetChild(1).gameObject.SetActive(true);
+        SpeedUpButtons.transform.GetChild(2).gameObject.SetActive(false);
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         if (enemies.Length <= 0)
         {

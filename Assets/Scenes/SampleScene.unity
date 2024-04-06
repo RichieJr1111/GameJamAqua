@@ -898,8 +898,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 464487289}
+  - component: {fileID: 464487290}
   m_Layer: 0
-  m_Name: Buttons
+  m_Name: ButtonsFastForward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -923,6 +924,18 @@ Transform:
   - {fileID: 528760378}
   m_Father: {fileID: 1420208955}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &464487290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464487288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71f8ab108116944df877865ac0afaf1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,7 +1046,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &528760378
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1099,13 +1112,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1632846332}
-        m_TargetAssemblyTypeName: PlayerSpawner, Assembly-CSharp
-        m_MethodName: SpawnAlly
-        m_Mode: 2
+      - m_Target: {fileID: 464487290}
+        m_TargetAssemblyTypeName: FastForward, Assembly-CSharp
+        m_MethodName: TimesFour
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 5981273463633161488, guid: 309d78ac0c9984facb2c171ffcfcf03e, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2374,7 +2387,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1338123813
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2440,13 +2453,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1632846332}
-        m_TargetAssemblyTypeName: PlayerSpawner, Assembly-CSharp
-        m_MethodName: SpawnAlly
-        m_Mode: 2
+      - m_Target: {fileID: 464487290}
+        m_TargetAssemblyTypeName: FastForward, Assembly-CSharp
+        m_MethodName: TimesOne
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 5981273463633161488, guid: 309d78ac0c9984facb2c171ffcfcf03e, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3542,6 +3555,7 @@ MonoBehaviour:
   - {fileID: 538896794879932788, guid: 5c4b642a5f69a4e50a0639549eb21a4a, type: 3}
   - {fileID: 93359923594186565, guid: 175e5e33b1324472ebbfa2df71acec00, type: 3}
   - {fileID: 93359923594186565, guid: 175e5e33b1324472ebbfa2df71acec00, type: 3}
+  SpeedUpButtons: {fileID: 464487288}
 --- !u!114 &1875196024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3798,13 +3812,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1632846332}
-        m_TargetAssemblyTypeName: PlayerSpawner, Assembly-CSharp
-        m_MethodName: SpawnAlly
-        m_Mode: 2
+      - m_Target: {fileID: 464487290}
+        m_TargetAssemblyTypeName: FastForward, Assembly-CSharp
+        m_MethodName: TimesTwo
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 5981273463633161488, guid: 309d78ac0c9984facb2c171ffcfcf03e, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

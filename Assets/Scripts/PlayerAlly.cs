@@ -22,7 +22,7 @@ public class PlayerAlly : MonoBehaviour
         transform.parent.GetChild(2).position = new Vector3(0, 0.5f, 0) + transform.position;
         transform.parent.GetChild(1).localScale = new Vector3(0.8f * (Health / MaxHealth), 0.1f, 0);
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject closestEnemy = null;
+        GameObject closestEnemy;
         float closeDist = 999;
         if (enemies.Length <= 0)
         {
@@ -57,7 +57,7 @@ public class PlayerAlly : MonoBehaviour
         rb.velocity = Vector2.ClampMagnitude(rb.velocity, Speed);
         rb.AddForce((closestEnemy.transform.position - transform.position) * Time.deltaTime * 100);
 
-        if (Health <= 0)
+        if (Health <= 0 && transform.GetComponent<Animator>().GetBool("isDead") == false)
         {
             StartCoroutine(Dying());
         }
@@ -75,7 +75,10 @@ public class PlayerAlly : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         isAttacking = false;
-        beingAttacked.GetComponent<BadChemicals>().Heatlh--; //might have diff sciprts add switch statement later
+        if (Health > 0)
+        {
+            beingAttacked.GetComponent<BadChemicals>().Heatlh--; //might have diff sciprts add switch statement later
+        }
     }
 
     private IEnumerator Dying()
