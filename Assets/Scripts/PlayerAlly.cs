@@ -40,6 +40,15 @@ public class PlayerAlly : MonoBehaviour
         }
 
         //transform.Lookat(closet enmy)
+        Vector3 lookTarg = closestEnemy.transform.position;
+        lookTarg.z = 0f;
+
+        Vector3 objectPos = transform.position;
+        lookTarg.x = lookTarg.x - objectPos.x;
+        lookTarg.y = lookTarg.y - objectPos.y;
+
+        float angle = Mathf.Atan2(lookTarg.y, lookTarg.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
         if (closeDist < 1f && !isAttacking)
         {
