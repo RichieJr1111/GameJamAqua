@@ -79,6 +79,7 @@ public class PlayerAlly : MonoBehaviour
     private IEnumerator Dying()
     {
         //death animation
+        transform.GetComponent<Animator>().SetBool("isDead", true);
         gameObject.tag = "Untagged";
         yield return new WaitForSeconds(1f);
         Destroy(transform.parent.gameObject);
