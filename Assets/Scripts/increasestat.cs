@@ -36,7 +36,7 @@ public class increasestat : MonoBehaviour
         if (enemies.Length <= 0)
         {
             Time.timeScale = 0;
-            Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, new Vector3(0, 22, -10), 0.00075f);
+            Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, new Vector3(0, 22, -10), 0.0036f);
             GameObject[] goodGuys = GameObject.FindGameObjectsWithTag("GoodGuy");
             foreach (GameObject a in goodGuys)
             {
@@ -45,7 +45,7 @@ public class increasestat : MonoBehaviour
         }
         else
         {
-            Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, new Vector3(0, 0, -10), 0.00075f);
+            Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, new Vector3(0, 0, -10), 0.0036f);
         }
     }
 

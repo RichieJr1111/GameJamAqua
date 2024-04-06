@@ -41,6 +41,7 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else
                     {
+                        GetComponent<AudioSource>().Play();
                         //play error sound effect
                     }
                     break;
@@ -54,6 +55,7 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else
                     {
+                        GetComponent<AudioSource>().Play();
                         //play error sound effect
                     }
                     break;
@@ -77,6 +79,7 @@ public class PlayerSpawner : MonoBehaviour
                 }
                 else
                 {
+                    GetComponent<AudioSource>().Play();
                     //play error sound effect
                 }
                 break;
@@ -87,6 +90,7 @@ public class PlayerSpawner : MonoBehaviour
                 }
                 else
                 {
+                    GetComponent<AudioSource>().Play();
                     //play error sound effect
                 }
                 break;

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class JukeBox : MonoBehaviour
 {
+    public AudioSource Battle;
+    public AudioSource Plan;
+    public AudioSource Shop;
     // Start is called before the first frame update
     void Awake()
     {

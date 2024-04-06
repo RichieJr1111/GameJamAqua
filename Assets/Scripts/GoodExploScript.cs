@@ -22,6 +22,10 @@ public class GoodExploScript : MonoBehaviour
         if (other.tag == "Enemy")
         {
             other.GetComponent<BadChemicals>().Heatlh -= Strength;
+            if (other.GetComponent<BadChemicals>().Heatlh < 0)
+            {
+                other.GetComponent<BadChemicals>().Heatlh = 0;
+            }
             //other.GetComponent<PlayerAlly>().Speed = 0;
         }
     }
