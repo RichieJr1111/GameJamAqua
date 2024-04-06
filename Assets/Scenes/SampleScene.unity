@@ -1728,6 +1728,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cffaa1551bffb4844844bb8045af616d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentCount1: 0
+  maxCount1: 3
+  currentCount2: 0
+  maxCount2: 3
+  selected: {fileID: 0}
 --- !u!1 &1818213954
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerSpawner : MonoBehaviour
 {
-    private int currentCount1;
-    private int maxCount1;
-    private int currentCount2;
-    private int maxCount2;
-    private GameObject selected;
+    public int currentCount1;
+    public int maxCount1;
+    public int currentCount2;
+    public int maxCount2;
+    public GameObject selected;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +27,9 @@ public class PlayerSpawner : MonoBehaviour
                 case ("Ally1"):
                     if (currentCount1 > 0)
                     {
-                        currentCount1--;                
+                        currentCount1--;
+                        GameObject temp = Instantiate(selected, Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0)), selected.transform.rotation);
+                        temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y, 0);
                     }
                     else
                     {

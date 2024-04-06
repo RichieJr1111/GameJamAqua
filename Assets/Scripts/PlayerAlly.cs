@@ -39,6 +39,8 @@ public class PlayerAlly : MonoBehaviour
             }
         }
 
+        //transform.Lookat(closet enmy)
+
         if (closeDist < 1f && !isAttacking)
         {
             isAttacking = true;
