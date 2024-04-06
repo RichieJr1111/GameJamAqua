@@ -10,9 +10,11 @@ public class PlayerSpawner : MonoBehaviour
     public int maxCount2;
     public GameObject selected;
     public static bool isHoverButton;
+    public JukeBox Jukebox;
     // Start is called before the first frame update
     void Start()
     {
+        Jukebox = GameObject.Find("Jukebox").GetComponent<JukeBox>();
         currentCount1 = maxCount1;
         currentCount2 = maxCount2;
         //rb = GetComponent<Rigidbody2D>();
@@ -60,7 +62,7 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     break;
             }
-            JukeBox.WhatShouldPlay();
+            Jukebox.WhatShouldPlay();
         }
         if (GameObject.FindGameObjectWithTag("GoodGuy") == null && currentCount1 < 0 && currentCount2 < 0)
         {

@@ -13,6 +13,8 @@ public class PlayerAlly : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        //Jukebox = GameObject.Find("Jukebox").GetComponent<JukeBox>();
+
     }
 
     // Update is called once per frame
@@ -89,7 +91,8 @@ public class PlayerAlly : MonoBehaviour
 
     private IEnumerator Dying()
     {
-        //death animation
+        //dying
+        transform.parent.GetComponent<AudioSource>().Play();
         transform.GetComponent<Animator>().SetBool("isDead", true);
         gameObject.tag = "Untagged";
         yield return new WaitForSeconds(1f);
