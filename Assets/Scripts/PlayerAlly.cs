@@ -54,18 +54,20 @@ public class PlayerAlly : MonoBehaviour
         float angle = Mathf.Atan2(lookTarg.y, lookTarg.x) * Mathf.Rad2Deg - 90;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
-        if (closeDist < 1f && !isAttacking)
-        {
-            isAttacking = true;
-            StartCoroutine(Attack(closestEnemy));
-        }
-
         rb.velocity = Vector2.ClampMagnitude(rb.velocity, Speed);
         rb.AddForce((closestEnemy.transform.position - transform.position) * Time.deltaTime * 100);
 
         if (Health <= 0)
         {
             StartCoroutine(Dying());
+        }
+        else
+        {
+            if (closeDist < 0.8f && !isAttacking)
+            {
+                isAttacking = true;
+                StartCoroutine(Attack(closestEnemy));
+            }
         }
     }
 

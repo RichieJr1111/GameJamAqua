@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class increasestat : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class increasestat : MonoBehaviour
     public GameObject bioremob3;
     public PlayerAlly biorem3;
     public GameObject SpawnerObj;
+    public TextMeshProUGUI LevelTXT;
     public static int Level = 1;
     public GameObject[] EnemyPrefabs;
     // Start is called before the first frame update
@@ -22,6 +24,7 @@ public class increasestat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        LevelTXT.text = Level.ToString();
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         if (enemies.Length <= 0)
         {
