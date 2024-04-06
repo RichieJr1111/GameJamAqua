@@ -729,7 +729,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -8.130005, y: -4.2800293}
+  m_AnchoredPosition: {x: -8.090027, y: -4.200012}
   m_SizeDelta: {x: 1.6, y: 1.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &947072358
@@ -840,7 +840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8146141290007266181, guid: 5c4b642a5f69a4e50a0639549eb21a4a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.175
+      value: -3.129
       objectReference: {fileID: 0}
     - target: {fileID: 8146141290007266181, guid: 5c4b642a5f69a4e50a0639549eb21a4a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1017,6 +1017,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175837641}
   m_CullTransparentMesh: 1
+--- !u!1 &1244901623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1244901624}
+  - component: {fileID: 1244901626}
+  - component: {fileID: 1244901625}
+  m_Layer: 5
+  m_Name: Image (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1244901624
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244901623}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1420208955}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -6, y: -4.25}
+  m_SizeDelta: {x: 6, y: 1.75}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1244901625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244901623}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 959010865, guid: 68f3b1656f28a4cb4a2e4f8b060e4a49, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1244901626
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244901623}
+  m_CullTransparentMesh: 1
 --- !u!1 &1420208951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,6 +1188,7 @@ RectTransform:
   m_Children:
   - {fileID: 1875196022}
   - {fileID: 947072357}
+  - {fileID: 1244901624}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1493,8 +1569,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91571d1eee2a486fb26d67d99ec8f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bioremob: {fileID: 5981273463633161488, guid: 309d78ac0c9984facb2c171ffcfcf03e, type: 3}
-  biorem: {fileID: 0}
+  bioremob1: {fileID: 538896794879932788, guid: 5c4b642a5f69a4e50a0639549eb21a4a, type: 3}
+  biorem1: {fileID: 0}
+  bioremob2: {fileID: 93359923594186565, guid: 175e5e33b1324472ebbfa2df71acec00, type: 3}
+  biorem2: {fileID: 0}
+  bioremob3: {fileID: 0}
+  biorem3: {fileID: 0}
+  SpawnerObj: {fileID: 1632846327}
   EnemyPrefabs:
   - {fileID: 538896794879932788, guid: 5c4b642a5f69a4e50a0639549eb21a4a, type: 3}
   - {fileID: 93359923594186565, guid: 175e5e33b1324472ebbfa2df71acec00, type: 3}

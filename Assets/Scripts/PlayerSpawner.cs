@@ -18,6 +18,13 @@ public class PlayerSpawner : MonoBehaviour
         //rb = GetComponent<Rigidbody2D>();
     }
 
+    public void Reset()
+    {
+        currentCount1 = maxCount1;
+        currentCount2 = maxCount2;
+        //rb = GetComponent<Rigidbody2D>();
+    }
+
     // Update is called once per frame
     void Update()
     {
