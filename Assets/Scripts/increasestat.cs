@@ -13,7 +13,10 @@ public class increasestat : MonoBehaviour
     public PlayerAlly biorem3;
     public GameObject SpawnerObj;
     public TextMeshProUGUI LevelTXT;
+    public TextMeshProUGUI MoneyTXT;
+    public TextMeshProUGUI MoneyTXT2;
     public static int Level = 1;
+    public static int Money = 0;
     public GameObject[] EnemyPrefabs;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +28,8 @@ public class increasestat : MonoBehaviour
     void Update()
     {
         LevelTXT.text = Level.ToString();
+        MoneyTXT.text = "Currency: " + Money.ToString();
+        MoneyTXT2.text = "Currency: " + Money.ToString();
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         if (enemies.Length <= 0)
         {
