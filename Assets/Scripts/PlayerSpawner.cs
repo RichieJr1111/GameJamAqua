@@ -9,6 +9,7 @@ public class PlayerSpawner : MonoBehaviour
     public int currentCount2;
     public int maxCount2;
     public GameObject selected;
+    public static bool isHoverButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class PlayerSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && selected != null)
+        if (Input.GetMouseButtonDown(0) && selected != null && Time.timeScale != 0 && !isHoverButton)
         {
             switch (selected.name)
             {
@@ -40,6 +41,8 @@ public class PlayerSpawner : MonoBehaviour
                     if (currentCount2 > 0)
                     {
                         currentCount2--;
+                        GameObject temp = Instantiate(selected, Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0)), selected.transform.rotation);
+                        temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y, 0);
                     }
                     else
                     {
