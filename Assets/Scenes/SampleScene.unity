@@ -3434,7 +3434,7 @@ MonoBehaviour:
   currentCount1: 0
   maxCount1: 3
   currentCount2: 0
-  maxCount2: 3
+  maxCount2: 0
   selected: {fileID: 0}
 --- !u!1 &1674178584
 GameObject:
