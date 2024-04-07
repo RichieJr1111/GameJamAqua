@@ -321,11 +321,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3010547342445029888, guid: acf72145d8b8648ea98c4447ac2f8d90, type: 3}
       propertyPath: Heatlh
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3010547342445029888, guid: acf72145d8b8648ea98c4447ac2f8d90, type: 3}
       propertyPath: MaxHeatlh
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3010547342445029888, guid: acf72145d8b8648ea98c4447ac2f8d90, type: 3}
       propertyPath: anAttacker
