@@ -35,9 +35,14 @@ public class BadChemicals : MonoBehaviour
 
     void Update()
     {
-        transform.parent.GetChild(1).position = new Vector3(0.5f * (Heatlh - MaxHeatlh) / MaxHeatlh, 0.5f, 0) + transform.position;
-        transform.parent.GetChild(2).position = new Vector3(0, 0.5f, 0) + transform.position;
-        transform.parent.GetChild(1).localScale = new Vector3(0.8f * (Heatlh / MaxHeatlh), 0.1f, 0);
+        if (Heatlh != MaxHeatlh)
+        {
+            transform.parent.GetChild(1).gameObject.SetActive(true);
+            transform.parent.GetChild(2).gameObject.SetActive(true);
+            transform.parent.GetChild(1).position = new Vector3(0.5f * (Heatlh - MaxHeatlh) / MaxHeatlh, 0.5f, 0) + transform.position;
+            transform.parent.GetChild(2).position = new Vector3(0, 0.5f, 0) + transform.position;
+            transform.parent.GetChild(1).localScale = new Vector3(0.8f * (Heatlh / MaxHeatlh), 0.1f, 0);
+        }
 
         if (Heatlh <= 0 && transform.GetComponent<Animator>().GetBool("isDead") == false)
         {

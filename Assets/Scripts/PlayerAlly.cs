@@ -20,9 +20,14 @@ public class PlayerAlly : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.parent.GetChild(1).position = new Vector3(0.4f * (Health - MaxHealth) / MaxHealth, 0.5f, 0) + transform.position;
-        transform.parent.GetChild(2).position = new Vector3(0, 0.5f, 0) + transform.position;
-        transform.parent.GetChild(1).localScale = new Vector3(0.8f * (Health / MaxHealth), 0.1f, 0);
+        if (Health != MaxHealth)
+        {
+            transform.parent.GetChild(1).gameObject.SetActive(true);
+            transform.parent.GetChild(2).gameObject.SetActive(true);
+            transform.parent.GetChild(1).position = new Vector3(0.4f * (Health - MaxHealth) / MaxHealth, 0.5f, 0) + transform.position;
+            transform.parent.GetChild(2).position = new Vector3(0, 0.5f, 0) + transform.position;
+            transform.parent.GetChild(1).localScale = new Vector3(0.8f * (Health / MaxHealth), 0.1f, 0);
+        }
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject closestEnemy;
         float closeDist = 999;
