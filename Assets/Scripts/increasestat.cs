@@ -29,6 +29,10 @@ public class increasestat : MonoBehaviour
     public int[] BoughtCountHealth;
     public int[] BoughtCountCount;
     public int[] BoughtCountDamage;
+    private bool GlobalOne = false;
+    private bool GlobalTwo = false;
+    private bool GlobalThree = false;
+    private bool GlobalFour = false;
     //public TextMeshProUGUI cost1;
     // Start is called before the first frame update
     void Start()
@@ -80,12 +84,22 @@ public class increasestat : MonoBehaviour
                 biorem1.MaxHealth++;
                 biorem1.Health++;
                 BoughtCountHealth[w]++;
+                if (GlobalTwo)
+                {
+                    biorem1.MaxHealth++;
+                    biorem1.Health++;
+                }
             }
             else
             {
                 biorem3.MaxHealth++;
                 biorem3.Health++;
                 BoughtCountHealth[w]++;
+                if (GlobalTwo)
+                {
+                    biorem3.MaxHealth++;
+                    biorem3.Health++;
+                }
             }
             EventSystem.current.currentSelectedGameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Cost : " + (increaseHealthPrice * (BoughtCountHealth[w] + 1)).ToString();
         }
@@ -115,9 +129,9 @@ public class increasestat : MonoBehaviour
             }
             else
             {
-                biorem3.MaxHealth++;
-                biorem3.Health++;
-                BoughtCountHealth[w]++;
+                SpawnerObj.GetComponent<PlayerSpawner>().maxCount3++;
+                SpawnerObj.GetComponent<PlayerSpawner>().currentCount3++;
+                BoughtCountCount[w]++;
             }            
             EventSystem.current.currentSelectedGameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Cost : " + (increaseCountPrice * (BoughtCountCount[w] + 1)).ToString();
         }
@@ -137,16 +151,31 @@ public class increasestat : MonoBehaviour
             {
                 biorem1.Damage++;
                 BoughtCountDamage[w]++;
+                if (GlobalTwo)
+                {
+                    biorem1.Damage++;
+                    BoughtCountDamage[w]++;
+                }
             }
             else if (w == 1)
             {
                 biorem2.Strength++;
                 BoughtCountDamage[w]++;
+                if (GlobalTwo)
+                {
+                    biorem2.Strength++;
+                    BoughtCountDamage[w]++;
+                }
             }
             else
             {
                 biorem3.Damage++;
                 BoughtCountDamage[w]++;
+                if (GlobalTwo)
+                {
+                    biorem3.Damage++;
+                    BoughtCountDamage[w]++;
+                }
             }
             EventSystem.current.currentSelectedGameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Cost : " + (increaseDamagePrice * (BoughtCountDamage[w] + 1)).ToString();
         }
@@ -162,19 +191,61 @@ public class increasestat : MonoBehaviour
         {
             case 0:
                 //global Upgrade 1
-                EventSystem.current.currentSelectedGameObject.GetComponent<Button>().enabled = false;
+                if (Money >= 50)
+                {
+                    Money -= 50;
+                    GlobalOne = true;
+                    biorem1.Damage *= 2;
+                    biorem2.Strength *= 2;
+                    biorem3.Damage *= 2;
+                    EventSystem.current.currentSelectedGameObject.GetComponent<Button>().enabled = false;
+                }
+                else
+                {
+                    transform.GetComponent<AudioSource>().Play();
+                }
                 break;
             case 1:
                 //global Upgrade 2
-                EventSystem.current.currentSelectedGameObject.GetComponent<Button>().enabled = false;
+                if (Money >= 100)
+                {
+                    Money -= 100;
+                    GlobalTwo = true;
+                    biorem1.Health *= 2;
+                    biorem1.MaxHealth *= 2;
+                    biorem3.Health *= 2;
+                    biorem3.MaxHealth *= 2;
+                    EventSystem.current.currentSelectedGameObject.GetComponent<Button>().enabled = false;
+                }
+                else
+                {
+                    transform.GetComponent<AudioSource>().Play();
+                }
                 break;
             case 2:
                 //global Upgrade 3
-                EventSystem.current.currentSelectedGameObject.GetComponent<Button>().enabled = false;
+                if (Money >= 250)
+                {
+                    Money -= 250;
+                    GlobalThree = true;
+                    EventSystem.current.currentSelectedGameObject.GetComponent<Button>().enabled = false;
+                }
+                else
+                {
+                    transform.GetComponent<AudioSource>().Play();
+                }
                 break;
             case 3:
                 //global Upgrade 4
-                EventSystem.current.currentSelectedGameObject.GetComponent<Button>().enabled = false;
+                if (Money >= 1000)
+                {
+                    //win the game
+                    EventSystem.current.currentSelectedGameObject.GetComponent<Button>().enabled = false;
+                }
+                else
+                {
+                    transform.GetComponent<AudioSource>().Play();
+                }
                 break;
         }
     }
@@ -190,7 +261,7 @@ public class increasestat : MonoBehaviour
 
     public void NextLevel()
     {
-        GameObject[] BlastResidue = GameObject.FindGameObjectsWithTag("GoodExplo");
+        GameObject[] BlastResidue = GameObject.FindGameObjectsWithTag("Explo");
         foreach (GameObject c in BlastResidue)
         {
             Destroy(c);
@@ -208,6 +279,10 @@ public class increasestat : MonoBehaviour
                     {
                         GameObject temp2 = Instantiate(EnemyPrefabs[0]);
                         temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
+                        if (GlobalThree)
+                        {
+                            //temp2.
+                        }
                     }
                     for (int i = 0; i < 5; i++)
                     {

@@ -18,7 +18,6 @@ public class BadChemicals : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-
     public void RandomSpawn()
     {
         float randY = Random.Range(-5f, 5f);

@@ -26,19 +26,19 @@ public class backgroundobjects : MonoBehaviour
 
     void Update()
     {
-            //Vector3 lookTarg = dest;
-            //lookTarg.z = 0f;
+        Vector3 lookTarg = dest;
+        lookTarg.z = 0f;
 
-            //Vector3 objectPos = transform.position;
-            //lookTarg.x = lookTarg.x - objectPos.x;
-            //lookTarg.y = lookTarg.y - objectPos.y;
+        Vector3 objectPos = transform.position;
+        lookTarg.x = lookTarg.x - objectPos.x;
+        lookTarg.y = lookTarg.y - objectPos.y;
 
-            //float angle = Mathf.Atan2(lookTarg.y, lookTarg.x) * Mathf.Rad2Deg - 150f;
-            //transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-            //add force towards dest
-            rb.velocity = Vector2.ClampMagnitude(rb.velocity, Speed);
-            //Debug.Log(dest);
-            rb.AddForce((dest - transform.position) * Time.deltaTime * 100);
+        float angle = Mathf.Atan2(lookTarg.y, lookTarg.x) * Mathf.Rad2Deg - 150f;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        //add force towards dest
+        rb.velocity = Vector2.ClampMagnitude(rb.velocity, Speed);
+        //Debug.Log(dest);
+        rb.AddForce((dest - transform.position) * Time.deltaTime * 100);
     }
 
 }

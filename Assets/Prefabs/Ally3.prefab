@@ -308,7 +308,7 @@ MonoBehaviour:
   MaxHealth: 1
   Health: 1
   Damage: 1
-  Ally3Attack: {fileID: 0}
+  Ally3Attack: {fileID: 9139536136546951580, guid: 4e3c9570c587d4d7788acbff786ea7e1, type: 3}
 --- !u!95 &6065912683449765435
 Animator:
   serializedVersion: 5
