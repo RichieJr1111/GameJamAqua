@@ -18,33 +18,28 @@ public class backgroundobjects : MonoBehaviour
     {
         float randY = Random.Range(-5f, 5f);
         float randX = Random.Range(-8.5f, 8.5f);
-        while (!(!(randX < -3 && randY < -3) && !(randX > 6 && randY < -3))) // x -3 to - 9 , y = -3 to - 5
-        {
-            randY = Random.Range(-5f, 5f);
-            randX = Random.Range(-8.5f, 8.5f);
-            dest = new Vector3(randX, randY, 0);
-        }
-        yield return new WaitUntil(() => new Vector3(Mathf.Round(dest.x), Mathf.Round(dest.y), Mathf.Round(dest.z)) == new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), Mathf.Round(transform.position.z)));
+        dest = new Vector3(randX, randY + 5, 0);
+        yield return new WaitUntil(() => new Vector3(Mathf.Round(dest.x), Mathf.Round(dest.y), 0) == new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y + 5), 0));
         //yield return new WaitForSeconds(1f);
         StartCoroutine(GoDestMakeDest());
     }
 
     void Update()
     {
-            Vector3 lookTarg = dest;
-            lookTarg.z = 0f;
+            //Vector3 lookTarg = dest;
+            //lookTarg.z = 0f;
 
-            Vector3 objectPos = transform.position;
-            lookTarg.x = lookTarg.x - objectPos.x;
-            lookTarg.y = lookTarg.y - objectPos.y;
+            //Vector3 objectPos = transform.position;
+            //lookTarg.x = lookTarg.x - objectPos.x;
+            //lookTarg.y = lookTarg.y - objectPos.y;
 
-            float angle = Mathf.Atan2(lookTarg.y, lookTarg.x) * Mathf.Rad2Deg - 150f;
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            //float angle = Mathf.Atan2(lookTarg.y, lookTarg.x) * Mathf.Rad2Deg - 150f;
+            //transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
             //add force towards dest
-        rb.velocity = Vector2.ClampMagnitude(rb.velocity, Speed);
-        Debug.Log(dest);
-        rb.AddForce((dest - transform.position) * Time.deltaTime * 100);
-        }
-
+            rb.velocity = Vector2.ClampMagnitude(rb.velocity, Speed);
+            //Debug.Log(dest);
+            rb.AddForce((dest - transform.position) * Time.deltaTime * 100);
     }
+
+}
 

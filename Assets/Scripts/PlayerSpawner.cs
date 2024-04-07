@@ -81,6 +81,7 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     break;
             }
+            Jukebox = GameObject.Find("Jukebox").GetComponent<JukeBox>();
             Jukebox.WhatShouldPlay();
         }
         if (GameObject.FindGameObjectWithTag("GoodGuy") == null && currentCount1 < 0 && currentCount2 < 0)

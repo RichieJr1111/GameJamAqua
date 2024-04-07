@@ -47,7 +47,6 @@ public class increasestat : MonoBehaviour
         }
         else
         {
-            Jukebox.WhatShouldPlay();
             Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, new Vector3(0, 0, -10), 0.0036f);
         }
     }
