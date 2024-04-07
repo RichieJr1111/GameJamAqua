@@ -1816,8 +1816,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Currency: 999'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 81f85c94aad144bfdaeec797ffa98272, type: 2}
-  m_sharedMaterial: {fileID: -6143541261592171560, guid: 81f85c94aad144bfdaeec797ffa98272, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1926,7 +1926,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -5.9000244, y: -1.3099976}
+  m_AnchoredPosition: {x: -5.8900146, y: -1.8400269}
   m_SizeDelta: {x: 6, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &904501368
@@ -1952,8 +1952,8 @@ MonoBehaviour:
   m_text: "Click one of the solutions \nto select them and click on\n the screen
     to spawn them in\n the enviroment"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 81f85c94aad144bfdaeec797ffa98272, type: 2}
-  m_sharedMaterial: {fileID: -6143541261592171560, guid: 81f85c94aad144bfdaeec797ffa98272, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4192,8 +4192,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 81f85c94aad144bfdaeec797ffa98272, type: 2}
-  m_sharedMaterial: {fileID: -6143541261592171560, guid: 81f85c94aad144bfdaeec797ffa98272, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4493,7 +4493,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 6.539978, y: -2.210022}
+  m_AnchoredPosition: {x: 6.590027, y: -2.3400269}
   m_SizeDelta: {x: 5, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1742676643
@@ -4518,8 +4518,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Click here to change the \nspeed of the game"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 81f85c94aad144bfdaeec797ffa98272, type: 2}
-  m_sharedMaterial: {fileID: -6143541261592171560, guid: 81f85c94aad144bfdaeec797ffa98272, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5004,8 +5004,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1913.9, y: -1075.5}
-  m_SizeDelta: {x: 4.21, y: 1}
+  m_AnchoredPosition: {x: -1913.5, y: -1075.5}
+  m_SizeDelta: {x: 3.5, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1880754473
 MonoBehaviour:
@@ -5029,8 +5029,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Currency: 999'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 81f85c94aad144bfdaeec797ffa98272, type: 2}
-  m_sharedMaterial: {fileID: -6143541261592171560, guid: 81f85c94aad144bfdaeec797ffa98272, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
