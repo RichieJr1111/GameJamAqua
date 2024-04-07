@@ -10,6 +10,7 @@ public class PlayerAlly : MonoBehaviour
     public float Health = 3f;
     public float Damage = 1f;
     private bool isAttacking = false;
+    public GameObject Ally3Attack;
     // Start is called before the first frame update
     void Start()
     {
@@ -64,7 +65,14 @@ public class PlayerAlly : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
         rb.velocity = Vector2.ClampMagnitude(rb.velocity, Speed);
-        rb.AddForce((closestEnemy.transform.position - transform.position) * Time.deltaTime * 100);
+        if (gameObject.name.Substring(0, 5) == "Ally3".Substring(0, 5) && isAttacking)
+        {
+            rb.AddForce((closestEnemy.transform.position - transform.position) * Time.deltaTime * -25);
+        }
+        else
+        {
+            rb.AddForce((closestEnemy.transform.position - transform.position) * Time.deltaTime * 100);
+        }
 
         if (Health <= 0 && transform.GetComponent<Animator>().GetBool("isDead") == false)
         {
@@ -72,7 +80,7 @@ public class PlayerAlly : MonoBehaviour
         }
         else
         {
-            if (closeDist < 0.8f && !isAttacking)
+            if (closeDist < 2.5f && !isAttacking)
             {
                 isAttacking = true;
                 StartCoroutine(Attack(closestEnemy));
@@ -82,7 +90,7 @@ public class PlayerAlly : MonoBehaviour
 
     private IEnumerator Attack(GameObject beingAttacked)
     {
-        if (gameObject.name.Substring(0,5) == "Ally1".Substring(0, 5))
+        if (gameObject.name.Substring(0, 5) == "Ally1".Substring(0, 5))
         {
             GetComponent<AudioSource>().Play();
             transform.GetComponent<Animator>().SetBool("isAttacking", true);
@@ -97,6 +105,21 @@ public class PlayerAlly : MonoBehaviour
                     beingAttacked.GetComponent<BadChemicals>().Heatlh = 0;
                 }
             }
+        }
+        else
+        {
+            //attack for ally3
+            GetComponent<AudioSource>().Play();
+            transform.GetComponent<Animator>().SetBool("isAttacking", true);
+            yield return new WaitForSeconds(1.5f);
+            if (Health > 0)
+            {
+                GameObject temp = Instantiate(Ally3Attack, transform.position + (2f * transform.up), transform.rotation);
+                temp.GetComponent<GoodExploScript>().Strength = Damage;
+            }
+            yield return new WaitForSeconds(1.5f);
+            transform.GetComponent<Animator>().SetBool("isAttacking", false);
+            isAttacking = false;
         }
     }
 

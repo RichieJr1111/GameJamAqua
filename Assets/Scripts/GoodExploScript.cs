@@ -15,6 +15,8 @@ public class GoodExploScript : MonoBehaviour
     {
         yield return new WaitForSeconds(0.85f);
         transform.GetComponent<Collider2D>().enabled = true;
+        yield return new WaitForSeconds(0.1f);
+        transform.GetComponent<Collider2D>().enabled = false;
     }
 
     void OnTriggerEnter2D(Collider2D other)

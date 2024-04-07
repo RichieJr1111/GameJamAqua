@@ -1035,8 +1035,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.5
-  m_fontSizeBase: 0.5
+  m_fontSize: 0.36
+  m_fontSizeBase: 0.36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3671,8 +3671,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.5
-  m_fontSizeBase: 0.5
+  m_fontSize: 0.36
+  m_fontSizeBase: 0.36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -30965,7 +30965,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -37551,7 +37551,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Oxygen Injections(Double Health)
+  m_text: Oxygen Injections (Double Health)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 81f85c94aad144bfdaeec797ffa98272, type: 2}
   m_sharedMaterial: {fileID: -6143541261592171560, guid: 81f85c94aad144bfdaeec797ffa98272, type: 2}
@@ -37578,8 +37578,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.5
-  m_fontSizeBase: 0.5
+  m_fontSize: 0.36
+  m_fontSizeBase: 0.36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -40740,8 +40740,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.5
-  m_fontSizeBase: 0.5
+  m_fontSize: 0.36
+  m_fontSizeBase: 0.36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -43597,7 +43597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1742061357
 Transform:
   m_ObjectHideFlags: 0
@@ -46611,7 +46611,7 @@ MonoBehaviour:
   biorem1: {fileID: 0}
   bioremob2: {fileID: 9139536136546951580, guid: 4e3c9570c587d4d7788acbff786ea7e1, type: 3}
   biorem2: {fileID: 0}
-  bioremob3: {fileID: 5981273463633161488, guid: 309d78ac0c9984facb2c171ffcfcf03e, type: 3}
+  bioremob3: {fileID: 4917133317376658746, guid: d9990226a019e4e28ae2fe6bc2a7f5da, type: 3}
   biorem3: {fileID: 0}
   SpawnerObj: {fileID: 1632846327}
   LevelTXT: {fileID: 1677376510}
@@ -46633,7 +46633,7 @@ MonoBehaviour:
   - {fileID: 1742061356}
   BoughtCountHealth: 000000000000000000000000
   BoughtCountCount: 000000000000000000000000
-  BoughtCountDamage: 
+  BoughtCountDamage: 000000000000000000000000
 --- !u!114 &1875196024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52971,6 +52971,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 200856295}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &6250948988848785867
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 597545748590294168, guid: d9990226a019e4e28ae2fe6bc2a7f5da, type: 3}
+      propertyPath: Ally3Attack
+      value: 
+      objectReference: {fileID: 9139536136546951580, guid: 4e3c9570c587d4d7788acbff786ea7e1, type: 3}
+    - target: {fileID: 2290475260823420990, guid: d9990226a019e4e28ae2fe6bc2a7f5da, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2290475260823420990, guid: d9990226a019e4e28ae2fe6bc2a7f5da, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2290475260823420990, guid: d9990226a019e4e28ae2fe6bc2a7f5da, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2290475260823420990, guid: d9990226a019e4e28ae2fe6bc2a7f5da, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2290475260823420990, guid: d9990226a019e4e28ae2fe6bc2a7f5da, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2290475260823420990, guid: d9990226a019e4e28ae2fe6bc2a7f5da, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2290475260823420990, guid: d9990226a019e4e28ae2fe6bc2a7f5da, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2290475260823420990, guid: d9990226a019e4e28ae2fe6bc2a7f5da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2290475260823420990, guid: d9990226a019e4e28ae2fe6bc2a7f5da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2290475260823420990, guid: d9990226a019e4e28ae2fe6bc2a7f5da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917133317376658746, guid: d9990226a019e4e28ae2fe6bc2a7f5da, type: 3}
+      propertyPath: m_Name
+      value: Ally3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d9990226a019e4e28ae2fe6bc2a7f5da, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -52996,3 +53057,4 @@ SceneRoots:
   - {fileID: 500737693}
   - {fileID: 1210130760}
   - {fileID: 1260061591}
+  - {fileID: 6250948988848785867}

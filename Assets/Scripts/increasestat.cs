@@ -49,6 +49,7 @@ public class increasestat : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         if (enemies.Length <= 0)
         {
+            //add here
             Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, new Vector3(0, 22, -10), 2f * Time.unscaledDeltaTime);
             GameObject[] goodGuys = GameObject.FindGameObjectsWithTag("GoodGuy");
             foreach (GameObject a in goodGuys)
@@ -167,6 +168,14 @@ public class increasestat : MonoBehaviour
                 //global Upgrade 2
                 EventSystem.current.currentSelectedGameObject.GetComponent<Button>().enabled = false;
                 break;
+            case 2:
+                //global Upgrade 3
+                EventSystem.current.currentSelectedGameObject.GetComponent<Button>().enabled = false;
+                break;
+            case 3:
+                //global Upgrade 4
+                EventSystem.current.currentSelectedGameObject.GetComponent<Button>().enabled = false;
+                break;
         }
     }
 
@@ -181,6 +190,11 @@ public class increasestat : MonoBehaviour
 
     public void NextLevel()
     {
+        GameObject[] BlastResidue = GameObject.FindGameObjectsWithTag("GoodExplo");
+        foreach (GameObject c in BlastResidue)
+        {
+            Destroy(c);
+        }
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         if (enemies.Length <= 0)
         {
