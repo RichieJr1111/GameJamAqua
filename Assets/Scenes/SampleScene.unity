@@ -46976,7 +46976,7 @@ MonoBehaviour:
   BoughtCountHealth: 000000000300000006000000
   BoughtCountCount: 000000000300000006000000
   BoughtCountDamage: 000000000300000006000000
-  Disabled: {fileID: 0}
+  Disabled: {fileID: 2019474939}
 --- !u!114 &1875196024
 MonoBehaviour:
   m_ObjectHideFlags: 0
