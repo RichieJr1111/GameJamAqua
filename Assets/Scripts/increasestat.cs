@@ -297,6 +297,8 @@ public class increasestat : MonoBehaviour
                     }
                     break;
                 case 3:
+                    EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().MaxHeatlh++;
+                    EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
                     for (int i = 0; i < 15; i++)
                     {
                         GameObject temp2 = Instantiate(EnemyPrefabs[0]);
@@ -307,8 +309,7 @@ public class increasestat : MonoBehaviour
                             temp2.GetComponent<BadChemicals>().MaxHeatlh /= 2f;
                         }
                     }
-                    EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().MaxHeatlh++;
-                    EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
+                    
                     for (int i = 0; i < 10; i++)
                     {
                         GameObject temp2 = Instantiate(EnemyPrefabs[1]);
@@ -331,6 +332,10 @@ public class increasestat : MonoBehaviour
                     }
                     break;
                 case 4:
+                    EnemyPrefabs[2].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().MaxHeatlh++;
+                    EnemyPrefabs[2].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
+                    EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().MaxHeatlh++;
+                    EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
                     for (int i = 0; i < 0; i++)
                     {
                         GameObject temp2 = Instantiate(EnemyPrefabs[0]);
@@ -341,8 +346,6 @@ public class increasestat : MonoBehaviour
                             temp2.GetComponent<BadChemicals>().MaxHeatlh /= 2f;
                         }
                     }
-                    EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().MaxHeatlh++;
-                    EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
                     for (int i = 0; i < 5; i++)
                     {
                         GameObject temp2 = Instantiate(EnemyPrefabs[1]);
@@ -363,12 +366,17 @@ public class increasestat : MonoBehaviour
                             temp2.GetComponent<BadChemicals>().MaxHeatlh /= 2f;
                         }
                     }
-                    EnemyPrefabs[2].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().MaxHeatlh++;
-                    EnemyPrefabs[2].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
                     break;
                 default:
                     if (Level != 1 && Level != 0)
                     {
+                        if (Level % 2 == 0)
+                        {
+                            EnemyPrefabs[2].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().MaxHeatlh++;
+                            EnemyPrefabs[2].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
+                        }
+                        EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().MaxHeatlh++;
+                        EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
                         for (int i = 0; i < Level + 10; i++)
                         {
                             GameObject temp2 = Instantiate(EnemyPrefabs[0]);
@@ -379,8 +387,6 @@ public class increasestat : MonoBehaviour
                                 temp2.GetComponent<BadChemicals>().MaxHeatlh /= 2f;
                             }
                         }
-                        EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().MaxHeatlh++;
-                        EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
                         for (int i = 0; i < Level + 10; i++)
                         {
                             GameObject temp2 = Instantiate(EnemyPrefabs[1]);
@@ -400,11 +406,6 @@ public class increasestat : MonoBehaviour
                                 temp2.GetComponent<BadChemicals>().Heatlh /= 2f;
                                 temp2.GetComponent<BadChemicals>().MaxHeatlh /= 2f;
                             }
-                        }
-                        if (Level % 2 == 0)
-                        {
-                            EnemyPrefabs[2].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().MaxHeatlh++;
-                            EnemyPrefabs[2].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
                         }
                     }
                     break;
