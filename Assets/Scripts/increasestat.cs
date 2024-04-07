@@ -30,6 +30,7 @@ public class increasestat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Level = 1;
         biorem1 = bioremob1.transform.GetChild(0).gameObject.GetComponent<PlayerAlly>();
         biorem2 = bioremob2.GetComponent<GoodExploScript>();
         Jukebox = GameObject.Find("Jukebox").GetComponent<JukeBox>();
@@ -133,12 +134,6 @@ public class increasestat : MonoBehaviour
 
     public void NextLevel()
     {
-        Jukebox = GameObject.Find("Jukebox").GetComponent<JukeBox>();
-        SpawnerObj.GetComponent<PlayerSpawner>().Reset();
-        Time.timeScale = 1f;
-        SpeedUpButtons.transform.GetChild(0).gameObject.SetActive(false);
-        SpeedUpButtons.transform.GetChild(1).gameObject.SetActive(true);
-        SpeedUpButtons.transform.GetChild(2).gameObject.SetActive(false);
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         if (enemies.Length <= 0)
         {
@@ -200,30 +195,39 @@ public class increasestat : MonoBehaviour
                     EnemyPrefabs[2].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
                     break;
                 default:
-                    for (int i = 0; i < Level + 10; i++)
+                    if (Level != 1 && Level != 0)
                     {
-                        GameObject temp2 = Instantiate(EnemyPrefabs[0]);
-                        temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
-                    }
-                    EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().MaxHeatlh++;
-                    EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
-                    for (int i = 0; i < Level + 10; i++)
-                    {
-                        GameObject temp2 = Instantiate(EnemyPrefabs[1]);
-                        temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
-                    }
-                    for (int i = 0; i < Level + 10; i++)
-                    {
-                        GameObject temp2 = Instantiate(EnemyPrefabs[2]);
-                        temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
-                    }
-                    if (Level % 2 == 0)
-                    {
-                        EnemyPrefabs[2].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().MaxHeatlh++;
-                        EnemyPrefabs[2].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
+                        for (int i = 0; i < Level + 10; i++)
+                        {
+                            GameObject temp2 = Instantiate(EnemyPrefabs[0]);
+                            temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
+                        }
+                        EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().MaxHeatlh++;
+                        EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
+                        for (int i = 0; i < Level + 10; i++)
+                        {
+                            GameObject temp2 = Instantiate(EnemyPrefabs[1]);
+                            temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
+                        }
+                        for (int i = 0; i < Level + 10; i++)
+                        {
+                            GameObject temp2 = Instantiate(EnemyPrefabs[2]);
+                            temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
+                        }
+                        if (Level % 2 == 0)
+                        {
+                            EnemyPrefabs[2].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().MaxHeatlh++;
+                            EnemyPrefabs[2].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
+                        }
                     }
                     break;
             }
+            Jukebox = GameObject.Find("Jukebox").GetComponent<JukeBox>();
+            SpawnerObj.GetComponent<PlayerSpawner>().Reset();
+            Time.timeScale = 1f;
+            SpeedUpButtons.transform.GetChild(0).gameObject.SetActive(false);
+            SpeedUpButtons.transform.GetChild(1).gameObject.SetActive(true);
+            SpeedUpButtons.transform.GetChild(2).gameObject.SetActive(false);
         }
         //Jukebox.WhatShouldPlay();
     }

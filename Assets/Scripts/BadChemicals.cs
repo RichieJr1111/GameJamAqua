@@ -18,6 +18,7 @@ public class BadChemicals : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+
     public void RandomSpawn()
     {
         float randY = Random.Range(-5f, 5f);
@@ -125,7 +126,7 @@ public class BadChemicals : MonoBehaviour
     {
         GetComponent<AudioSource>().Play();
         transform.GetComponent<Animator>().SetBool("isAttacking", true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.75f);
         transform.GetComponent<Animator>().SetBool("isAttacking", false);
         isAttacking = false;
         if (Heatlh > 0)
