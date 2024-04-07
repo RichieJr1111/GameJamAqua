@@ -98,7 +98,7 @@ public class BadChemicals : MonoBehaviour
                     }
                 }
                 dest = closestGood.transform.position;
-                if (!isAttacking && closeDist < 0.8f)
+                if (!isAttacking && closeDist < 0.7f)
                 {
                     isAttacking = true;
                     StartCoroutine(Attack(closestGood));
@@ -125,7 +125,7 @@ public class BadChemicals : MonoBehaviour
     {
         GetComponent<AudioSource>().Play();
         transform.GetComponent<Animator>().SetBool("isAttacking", true);
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSeconds(0.25f);
         transform.GetComponent<Animator>().SetBool("isAttacking", false);
         isAttacking = false;
         if (Heatlh > 0)
