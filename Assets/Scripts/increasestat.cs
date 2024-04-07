@@ -58,12 +58,12 @@ public class increasestat : MonoBehaviour
             GameObject[] goodGuys = GameObject.FindGameObjectsWithTag("GoodGuy");
             foreach (GameObject a in goodGuys)
             {
-                Destroy(a.transform.parent.gameObject, 0.1f);
+                Destroy(a.transform.parent.gameObject);
             }
             GameObject[] Explo = GameObject.FindGameObjectsWithTag("Explo");
             foreach (GameObject a in Explo)
             {
-                Destroy(a.transform.parent.gameObject, 0.1f);
+                Destroy(a.transform.parent.gameObject);
             }
             Time.timeScale = 0;
         }

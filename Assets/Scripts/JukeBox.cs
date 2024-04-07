@@ -22,7 +22,7 @@ public class JukeBox : MonoBehaviour
             //Shop.mute = false;
             //Battle.mute = true;
             //Plan.mute = true;
-            StartCoroutine(SlowTransition(false, true, true));
+            StartCoroutine(SlowTransition(1));
         }
         else if (GameObject.FindGameObjectWithTag("GoodGuy") == null && Plan.volume == 0f && Time.timeScale > 0.25f)
         {
@@ -30,7 +30,7 @@ public class JukeBox : MonoBehaviour
             //Battle.mute = true;
             //Plan.mute = false;
             //Shop.mute = true;
-            StartCoroutine(SlowTransition(true, false, true));
+            StartCoroutine(SlowTransition(2));
         }
         else if(GameObject.FindGameObjectWithTag("GoodGuy") != null && Battle.volume == 0f && Time.timeScale > 0.25f)
         {
@@ -38,27 +38,27 @@ public class JukeBox : MonoBehaviour
             //Plan.mute = true;
             //Shop.mute = true;
             //Battle.mute = false;
-            StartCoroutine(SlowTransition(true, true, false));
+            StartCoroutine(SlowTransition(3));
         }
     }
 
-    private IEnumerator SlowTransition(bool one, bool two, bool three)
+    private IEnumerator SlowTransition(int h)
     {
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < 30; i++)
         {
-            if (!one)
+            if (h == 1)
             {
                 Shop.volume += 0.01f;
                 Battle.volume -= 0.01f;
                 Plan.volume -= 0.01f;
             }
-            else if (!two)
+            else if (h == 2)
             {
                 Plan.volume += 0.01f;
                 Battle.volume -= 0.01f;
                 Shop.volume -= 0.01f;
             }
-            else if (!three)
+            else if (h == 3)
             {
                 Plan.volume -= 0.01f;
                 Battle.volume += 0.01f;
