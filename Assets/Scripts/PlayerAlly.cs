@@ -83,7 +83,12 @@ public class PlayerAlly : MonoBehaviour
         }
         else
         {
-            if (closeDist < 2.5f && !isAttacking)
+            if (closeDist < 2.5f && !isAttacking && gameObject.name.Substring(0, 5) == "Ally3".Substring(0, 5))
+            {
+                isAttacking = true;
+                StartCoroutine(Attack(closestEnemy));
+            }
+            else if (closeDist < 0.8f && !isAttacking && gameObject.name.Substring(0, 5) == "Ally1".Substring(0, 5))
             {
                 isAttacking = true;
                 StartCoroutine(Attack(closestEnemy));
@@ -117,7 +122,7 @@ public class PlayerAlly : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
             if (Health > 0)
             {
-                GameObject temp = Instantiate(Ally3Attack, transform.position + (2f * (transform.up + -transform.right)), transform.rotation);
+                GameObject temp = Instantiate(Ally3Attack, transform.position + (2f * ((-1 * transform.up) + (-1 * transform.right))), transform.rotation);
                 temp.GetComponent<GoodExploScript>().Strength = Damage;
             }
             yield return new WaitForSeconds(1.5f);
