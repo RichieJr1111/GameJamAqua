@@ -130,7 +130,7 @@ public class BadChemicals : MonoBehaviour
         isAttacking = false;
         if (Heatlh > 0)
         {
-            beingAttacked.GetComponent<PlayerAlly>().Health--; //might have diff sciprts add switch statement later
+            beingAttacked.GetComponent<PlayerAlly>().Health -= 0.5f; //might have diff sciprts add switch statement later
             if (beingAttacked.GetComponent<PlayerAlly>().Health < 0)
             {
                 beingAttacked.GetComponent<PlayerAlly>().Health = 0;
@@ -144,7 +144,7 @@ public class BadChemicals : MonoBehaviour
         transform.parent.GetComponent<AudioSource>().Play();
         transform.GetComponent<Animator>().SetBool("isDead", true);
         gameObject.tag = "Untagged";
-        if (gameObject.transform.parent.name.Substring(0,6) == "Enemy1".Substring(0, 6))
+        if (gameObject.transform.parent.gameObject.name.Substring(0,6) == "Enemy1".Substring(0, 6))
         {
             increasestat.Money++;
         }
