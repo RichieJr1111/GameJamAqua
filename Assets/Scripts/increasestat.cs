@@ -88,6 +88,8 @@ public class increasestat : MonoBehaviour
                     {
                         Instantiate(EnemyPrefabs[0]);
                     }
+                    EnemyPrefabs[0].GetComponent<BadChemicals>().MaxHeatlh++;
+                    EnemyPrefabs[0].GetComponent<BadChemicals>().Heatlh++;
                     for (int i = 0; i < 10; i++)
                     {
                         Instantiate(EnemyPrefabs[1]);
@@ -99,9 +101,11 @@ public class increasestat : MonoBehaviour
                     break;
                 case 4:
                     for (int i = 0; i < 0; i++)
-                    {
+                    {                      
                         Instantiate(EnemyPrefabs[0]);
                     }
+                    EnemyPrefabs[0].GetComponent<BadChemicals>().MaxHeatlh++;
+                    EnemyPrefabs[0].GetComponent<BadChemicals>().Heatlh++;
                     for (int i = 0; i < 5; i++)
                     {
                         Instantiate(EnemyPrefabs[1]);
@@ -110,12 +114,16 @@ public class increasestat : MonoBehaviour
                     {
                         Instantiate(EnemyPrefabs[2]);
                     }
+                    EnemyPrefabs[2].GetComponent<BadChemicals>().MaxHeatlh++;
+                    EnemyPrefabs[2].GetComponent<BadChemicals>().Heatlh++;
                     break;
                 default:
                     for (int i = 0; i < Level + 10; i++)
                     {
-                        Instantiate(EnemyPrefabs[0]);
+                        Instantiate(EnemyPrefabs[0]);                 
                     }
+                    EnemyPrefabs[0].GetComponent<BadChemicals>().MaxHeatlh++;
+                    EnemyPrefabs[0].GetComponent<BadChemicals>().Heatlh++;
                     for (int i = 0; i < Level + 10; i++)
                     {
                         Instantiate(EnemyPrefabs[1]);
@@ -123,6 +131,11 @@ public class increasestat : MonoBehaviour
                     for (int i = 0; i < Level + 10; i++)
                     {
                         Instantiate(EnemyPrefabs[2]);
+                    }
+                    if (Level % 2 == 0)
+                    {
+                        EnemyPrefabs[2].GetComponent<BadChemicals>().MaxHeatlh++;
+                        EnemyPrefabs[2].GetComponent<BadChemicals>().Heatlh++;
                     }
                     break;
             }
