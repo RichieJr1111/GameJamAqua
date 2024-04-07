@@ -32,8 +32,8 @@ public class increasestat : MonoBehaviour
     void Update()
     {
         LevelTXT.text = Level.ToString();
-        MoneyTXT.text = "Currency: " + Money.ToString();
-        MoneyTXT2.text = "Currency: " + Money.ToString();
+        MoneyTXT.text = "Research Points: " + Money.ToString();
+        MoneyTXT2.text = "Research Points: " + Money.ToString();
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         if (enemies.Length <= 0)
         {
