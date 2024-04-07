@@ -58,7 +58,7 @@ public class PlayerSpawner : MonoBehaviour
         }
         c1.text = currentCount1.ToString();
         c2.text = currentCount2.ToString();
-        c3.text = currentCount2.ToString();
+        c3.text = currentCount3.ToString();
         if (Input.GetMouseButtonDown(0) && selected != null && Time.timeScale != 0 && !isHoverButton)
         {
             switch (selected.name)
