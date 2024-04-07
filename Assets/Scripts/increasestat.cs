@@ -24,7 +24,7 @@ public class increasestat : MonoBehaviour
     void Start()
     {
         biorem1 = bioremob1.transform.GetChild(0).gameObject.GetComponent<PlayerAlly>();
-        biorem2 = bioremob2.transform.GetChild(0).gameObject.GetComponent<GoodExploScript>();
+        biorem2 = bioremob2.GetComponent<GoodExploScript>();
         Jukebox = GameObject.Find("Jukebox").GetComponent<JukeBox>();
     }
 
@@ -76,66 +76,77 @@ public class increasestat : MonoBehaviour
                 case 2:
                     for (int i = 0; i < 10; i++) 
                     {
-                        Instantiate(EnemyPrefabs[0]);
+                        GameObject temp2 = Instantiate(EnemyPrefabs[0]);
+                        temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
                     }
                     for (int i = 0; i < 5; i++)
                     {
-                        Instantiate(EnemyPrefabs[1]);
+                        GameObject temp2 = Instantiate(EnemyPrefabs[1]);
+                        temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
                     }
                     break;
                 case 3:
                     for (int i = 0; i < 15; i++)
                     {
-                        Instantiate(EnemyPrefabs[0]);
+                        GameObject temp2 = Instantiate(EnemyPrefabs[0]);
+                        temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
                     }
-                    EnemyPrefabs[0].GetComponent<BadChemicals>().MaxHeatlh++;
-                    EnemyPrefabs[0].GetComponent<BadChemicals>().Heatlh++;
+                    EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().MaxHeatlh++;
+                    EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
                     for (int i = 0; i < 10; i++)
                     {
-                        Instantiate(EnemyPrefabs[1]);
+                        GameObject temp2 = Instantiate(EnemyPrefabs[1]);
+                        temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
                     }
                     for (int i = 0; i < 5; i++)
                     {
-                        Instantiate(EnemyPrefabs[2]);
+                        GameObject temp2 = Instantiate(EnemyPrefabs[2]);
+                        temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
                     }
                     break;
                 case 4:
                     for (int i = 0; i < 0; i++)
-                    {                      
-                        Instantiate(EnemyPrefabs[0]);
+                    {
+                        GameObject temp2 = Instantiate(EnemyPrefabs[0]);
+                        temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
                     }
-                    EnemyPrefabs[0].GetComponent<BadChemicals>().MaxHeatlh++;
-                    EnemyPrefabs[0].GetComponent<BadChemicals>().Heatlh++;
+                    EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().MaxHeatlh++;
+                    EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
                     for (int i = 0; i < 5; i++)
                     {
-                        Instantiate(EnemyPrefabs[1]);
+                        GameObject temp2 = Instantiate(EnemyPrefabs[1]);
+                        temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
                     }
                     for (int i = 0; i < 15; i++)
                     {
-                        Instantiate(EnemyPrefabs[2]);
+                        GameObject temp2 = Instantiate(EnemyPrefabs[2]);
+                        temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
                     }
-                    EnemyPrefabs[2].GetComponent<BadChemicals>().MaxHeatlh++;
-                    EnemyPrefabs[2].GetComponent<BadChemicals>().Heatlh++;
+                    EnemyPrefabs[2].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().MaxHeatlh++;
+                    EnemyPrefabs[2].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
                     break;
                 default:
                     for (int i = 0; i < Level + 10; i++)
                     {
-                        Instantiate(EnemyPrefabs[0]);                 
+                        GameObject temp2 = Instantiate(EnemyPrefabs[0]);
+                        temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
                     }
-                    EnemyPrefabs[0].GetComponent<BadChemicals>().MaxHeatlh++;
-                    EnemyPrefabs[0].GetComponent<BadChemicals>().Heatlh++;
+                    EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().MaxHeatlh++;
+                    EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
                     for (int i = 0; i < Level + 10; i++)
                     {
-                        Instantiate(EnemyPrefabs[1]);
+                        GameObject temp2 = Instantiate(EnemyPrefabs[1]);
+                        temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
                     }
                     for (int i = 0; i < Level + 10; i++)
                     {
-                        Instantiate(EnemyPrefabs[2]);
+                        GameObject temp2 = Instantiate(EnemyPrefabs[2]);
+                        temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
                     }
                     if (Level % 2 == 0)
                     {
-                        EnemyPrefabs[2].GetComponent<BadChemicals>().MaxHeatlh++;
-                        EnemyPrefabs[2].GetComponent<BadChemicals>().Heatlh++;
+                        EnemyPrefabs[2].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().MaxHeatlh++;
+                        EnemyPrefabs[2].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
                     }
                     break;
             }

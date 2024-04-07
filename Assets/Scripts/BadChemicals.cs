@@ -18,6 +18,19 @@ public class BadChemicals : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    public void RandomSpawn()
+    {
+        float randY = Random.Range(-5f, 5f);
+        float randX = Random.Range(-8.5f, 8.5f);
+        while (!(!(randX < -3 && randY < -3) && !(randX > 6 && randY < -3))) // x -3 to - 9 , y = -3 to - 5
+        {
+            randY = Random.Range(-5f, 5f);
+            randX = Random.Range(-8.5f, 8.5f);
+            dest = new Vector3(randX, randY, 0);
+        }
+        transform.position = dest;
+    }
+
     private IEnumerator GoDestMakeDest()
     {
         float randY = Random.Range(-5f, 5f);
