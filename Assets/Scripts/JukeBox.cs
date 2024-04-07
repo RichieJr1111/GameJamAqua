@@ -13,6 +13,11 @@ public class JukeBox : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    private void Update()
+    {
+        WhatShouldPlay();
+    }
+
     // Update is called once per frame
     public void WhatShouldPlay()
     {
@@ -49,20 +54,20 @@ public class JukeBox : MonoBehaviour
             if (h == 1)
             {
                 Shop.volume += 0.01f;
-                Battle.volume -= 0.01f;
-                Plan.volume -= 0.01f;
+                Battle.volume -= 0.015f;
+                Plan.volume -= 0.015f;
             }
             else if (h == 2)
             {
                 Plan.volume += 0.01f;
-                Battle.volume -= 0.01f;
-                Shop.volume -= 0.01f;
+                Battle.volume -= 0.015f;
+                Shop.volume -= 0.015f;
             }
             else if (h == 3)
             {
-                Plan.volume -= 0.01f;
+                Plan.volume -= 0.015f;
                 Battle.volume += 0.01f;
-                Shop.volume -= 0.01f;
+                Shop.volume -= 0.015f;
             }
             yield return new WaitForSecondsRealtime(0.015f);
         }

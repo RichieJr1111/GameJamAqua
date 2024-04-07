@@ -111,7 +111,7 @@ public class increasestat : MonoBehaviour
 
     public void IncreaseCount(int w)
     {
-
+            
         if (Money >= increaseCountPrice * (BoughtCountCount[w] + 1))
         {
             Money -= increaseCountPrice * (BoughtCountCount[w] + 1);
@@ -202,7 +202,7 @@ public class increasestat : MonoBehaviour
                 }
                 else
                 {
-                    transform.GetComponent<AudioSource>().Play();
+                    GetComponent<AudioSource>().Play();
                 }
                 break;
             case 1:
@@ -219,7 +219,7 @@ public class increasestat : MonoBehaviour
                 }
                 else
                 {
-                    transform.GetComponent<AudioSource>().Play();
+                    GetComponent<AudioSource>().Play();
                 }
                 break;
             case 2:
@@ -232,7 +232,7 @@ public class increasestat : MonoBehaviour
                 }
                 else
                 {
-                    transform.GetComponent<AudioSource>().Play();
+                    GetComponent<AudioSource>().Play();
                 }
                 break;
             case 3:
@@ -244,7 +244,7 @@ public class increasestat : MonoBehaviour
                 }
                 else
                 {
-                    transform.GetComponent<AudioSource>().Play();
+                    GetComponent<AudioSource>().Play();
                 }
                 break;
         }
