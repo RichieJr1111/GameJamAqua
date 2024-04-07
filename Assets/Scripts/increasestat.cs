@@ -23,9 +23,9 @@ public class increasestat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Jukebox = GameObject.Find("Jukebox").GetComponent<JukeBox>();
         biorem1 = bioremob1.transform.GetChild(0).gameObject.GetComponent<PlayerAlly>();
         biorem2 = bioremob2.transform.GetChild(0).gameObject.GetComponent<GoodExploScript>();
+        Jukebox = GameObject.Find("Jukebox").GetComponent<JukeBox>();
     }
 
     // Update is called once per frame

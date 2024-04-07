@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerSpawner : MonoBehaviour
 {
@@ -11,12 +12,15 @@ public class PlayerSpawner : MonoBehaviour
     public GameObject selected;
     public static bool isHoverButton;
     public JukeBox Jukebox;
+    public TextMeshProUGUI c1;
+    public TextMeshProUGUI c2;
+    public TextMeshProUGUI c3;
     // Start is called before the first frame update
     void Start()
     {
-        Jukebox = GameObject.Find("Jukebox").GetComponent<JukeBox>();
         currentCount1 = maxCount1;
         currentCount2 = maxCount2;
+        Jukebox = GameObject.Find("Jukebox").GetComponent<JukeBox>();
         //rb = GetComponent<Rigidbody2D>();
     }
 
@@ -30,6 +34,9 @@ public class PlayerSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        c1.text = currentCount1.ToString();
+        c2.text = currentCount2.ToString();
+        c3.text = currentCount2.ToString();
         if (Input.GetMouseButtonDown(0) && selected != null && Time.timeScale != 0 && !isHoverButton)
         {
             switch (selected.name)
