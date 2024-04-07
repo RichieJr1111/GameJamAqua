@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class increasestat : MonoBehaviour
 {
@@ -70,6 +71,10 @@ public class increasestat : MonoBehaviour
         else
         {
             Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, new Vector3(0, 0, -10), 2f * Time.unscaledDeltaTime);
+        }
+        if (GlobalFour)
+        {
+            SceneManager.LoadScene("VictoryScene");
         }
     }
 
