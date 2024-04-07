@@ -20,6 +20,8 @@ public class increasestat : MonoBehaviour
     public GameObject[] EnemyPrefabs;
     public GameObject SpeedUpButtons;
     public JukeBox Jukebox;
+    public static int increaseHealthPrice = 0;
+    public TextMeshProUGUI cost1;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,8 +61,15 @@ public class increasestat : MonoBehaviour
 
     public void IncreaseHealth()
     {
-        biorem1.Health++;
-        biorem1.MaxHealth++;
+        
+        if (Money > 5 + increaseHealthPrice)
+        {
+            biorem1.MaxHealth++;
+            biorem1.Health++;
+            increaseHealthPrice++;
+            Money = Money -5;
+            cost1.text = "Cost : " + (5 + increaseHealthPrice);
+        }
     }
 
     public void NextLevel()
