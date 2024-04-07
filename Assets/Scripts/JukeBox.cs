@@ -32,7 +32,7 @@ public class JukeBox : MonoBehaviour
             //Shop.mute = true;
             StartCoroutine(SlowTransition(true, false, true));
         }
-        else if(Battle.volume == 0f && Time.timeScale > 0.25f)
+        else if(GameObject.FindGameObjectWithTag("GoodGuy") != null && Battle.volume == 0f && Time.timeScale > 0.25f)
         {
             //play battle
             //Plan.mute = true;
