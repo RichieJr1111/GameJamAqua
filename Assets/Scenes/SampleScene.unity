@@ -12237,7 +12237,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost : 5'
+  m_text: 'Cost : 30'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 81f85c94aad144bfdaeec797ffa98272, type: 2}
   m_sharedMaterial: {fileID: -6143541261592171560, guid: 81f85c94aad144bfdaeec797ffa98272, type: 2}
@@ -19777,7 +19777,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost : 5'
+  m_text: 'Cost : 20'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 81f85c94aad144bfdaeec797ffa98272, type: 2}
   m_sharedMaterial: {fileID: -6143541261592171560, guid: 81f85c94aad144bfdaeec797ffa98272, type: 2}
@@ -22216,7 +22216,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost : 5'
+  m_text: 'Cost : 20'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 81f85c94aad144bfdaeec797ffa98272, type: 2}
   m_sharedMaterial: {fileID: -6143541261592171560, guid: 81f85c94aad144bfdaeec797ffa98272, type: 2}
@@ -41633,9 +41633,9 @@ MonoBehaviour:
   currentCount1: 0
   maxCount1: 3
   currentCount2: 0
-  maxCount2: 3
+  maxCount2: 0
   currentCount3: 0
-  maxCount3: 3
+  maxCount3: 0
   selected: {fileID: 0}
   Jukebox: {fileID: 0}
   c1: {fileID: 2121108036}
@@ -47324,9 +47324,9 @@ MonoBehaviour:
   - {fileID: 1335409821}
   - {fileID: 91314642}
   - {fileID: 1742061356}
-  BoughtCountHealth: 000000000000000000000000
-  BoughtCountCount: 000000000000000000000000
-  BoughtCountDamage: 000000000000000000000000
+  BoughtCountHealth: 000000000300000006000000
+  BoughtCountCount: 000000000300000006000000
+  BoughtCountDamage: 000000000300000006000000
 --- !u!114 &1875196024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50704,7 +50704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2019474938
 RectTransform:
   m_ObjectHideFlags: 0
@@ -51952,7 +51952,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost : 5'
+  m_text: 'Cost : 30'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 81f85c94aad144bfdaeec797ffa98272, type: 2}
   m_sharedMaterial: {fileID: -6143541261592171560, guid: 81f85c94aad144bfdaeec797ffa98272, type: 2}
@@ -52483,7 +52483,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost : 5'
+  m_text: 'Cost : 20'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 81f85c94aad144bfdaeec797ffa98272, type: 2}
   m_sharedMaterial: {fileID: -6143541261592171560, guid: 81f85c94aad144bfdaeec797ffa98272, type: 2}
@@ -53251,7 +53251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost : 5'
+  m_text: 'Cost : 30'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 81f85c94aad144bfdaeec797ffa98272, type: 2}
   m_sharedMaterial: {fileID: -6143541261592171560, guid: 81f85c94aad144bfdaeec797ffa98272, type: 2}
