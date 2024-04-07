@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerSpawner : MonoBehaviour
 {
@@ -47,6 +48,10 @@ public class PlayerSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
         c1.text = currentCount1.ToString();
         c2.text = currentCount2.ToString();
         c3.text = currentCount2.ToString();
