@@ -17,6 +17,7 @@ public class PlayerSpawner : MonoBehaviour
     public TextMeshProUGUI c2;
     public TextMeshProUGUI c3;
     public GameObject FadeObj;
+    public GameObject GameOverScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -84,9 +85,10 @@ public class PlayerSpawner : MonoBehaviour
             Jukebox = GameObject.Find("Jukebox").GetComponent<JukeBox>();
             Jukebox.WhatShouldPlay();
         }
-        if (GameObject.FindGameObjectWithTag("GoodGuy") == null && currentCount1 < 0 && currentCount2 < 0)
+        if (GameObject.FindGameObjectWithTag("GoodGuy") == null && currentCount1 <= 0 && currentCount2 <= 0)
         {
             //gameOver
+            StartCoroutine(GameOverScreen.GetComponent<GameOverFade>().Fade());
         }
     }
 
