@@ -11,6 +11,8 @@ public class PlayerSpawner : MonoBehaviour
     public int maxCount1;
     public int currentCount2;
     public int maxCount2;
+    public int currentCount3;
+    public int maxCount3;
     public GameObject selected;
     public static bool isHoverButton;
     public JukeBox Jukebox;
@@ -24,6 +26,7 @@ public class PlayerSpawner : MonoBehaviour
     {
         currentCount1 = maxCount1;
         currentCount2 = maxCount2;
+        currentCount3 = maxCount3;
         Jukebox = GameObject.Find("Jukebox").GetComponent<JukeBox>();
         StartCoroutine(Transition());
         //rb = GetComponent<Rigidbody2D>();
@@ -42,6 +45,7 @@ public class PlayerSpawner : MonoBehaviour
     {
         currentCount1 = maxCount1;
         currentCount2 = maxCount2;
+        currentCount3 = maxCount3;
         //rb = GetComponent<Rigidbody2D>();
     }
 
@@ -90,10 +94,11 @@ public class PlayerSpawner : MonoBehaviour
             Jukebox = GameObject.Find("Jukebox").GetComponent<JukeBox>();
             Jukebox.WhatShouldPlay();
         }
-        if (GameObject.FindGameObjectWithTag("GoodGuy") == null && currentCount1 <= 0 && currentCount2 <= 0)
+        if (GameObject.FindGameObjectWithTag("GoodGuy") == null && currentCount1 <= 0 && currentCount2 <= 0 && GameObject.FindGameObjectWithTag("Enemy") != null && GameOverScreen != null)
         {
             //gameOver
             StartCoroutine(GameOverScreen.GetComponent<GameOverFade>().Fade());
+            GameOverScreen = null;
         }
     }
 

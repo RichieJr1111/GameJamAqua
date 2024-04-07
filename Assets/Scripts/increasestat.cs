@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class increasestat : MonoBehaviour
@@ -23,9 +24,11 @@ public class increasestat : MonoBehaviour
     public JukeBox Jukebox;
     public int increaseHealthPrice = 5;
     public int increaseCountPrice = 5;
+    public int increaseDamagePrice = 5;
     public GameObject[] UpgradeTabs;
     public int[] BoughtCountHealth;
     public int[] BoughtCountCount;
+    public int[] BoughtCountDamage;
     //public TextMeshProUGUI cost1;
     // Start is called before the first frame update
     void Start()
@@ -68,8 +71,9 @@ public class increasestat : MonoBehaviour
     public void IncreaseHealth(int w)
     {
 
-        if (Money > increaseHealthPrice * (BoughtCountHealth[w] + 1))
+        if (Money >= increaseHealthPrice * (BoughtCountHealth[w] + 1))
         {
+            Money -= increaseHealthPrice * (BoughtCountHealth[w] + 1);
             if (w == 0)
             {
                 biorem1.MaxHealth++;
@@ -82,7 +86,6 @@ public class increasestat : MonoBehaviour
                 biorem3.Health++;
                 BoughtCountHealth[w]++;
             }
-            Money -= increaseHealthPrice * (BoughtCountHealth[w] + 1);
             EventSystem.current.currentSelectedGameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Cost : " + (increaseHealthPrice * (BoughtCountHealth[w] + 1)).ToString();
         }
         else
@@ -94,8 +97,9 @@ public class increasestat : MonoBehaviour
     public void IncreaseCount(int w)
     {
 
-        if (Money > increaseCountPrice * (BoughtCountCount[w] + 1))
+        if (Money >= increaseCountPrice * (BoughtCountCount[w] + 1))
         {
+            Money -= increaseCountPrice * (BoughtCountCount[w] + 1);
             if (w == 0)
             {
                 SpawnerObj.GetComponent<PlayerSpawner>().maxCount1++;
@@ -113,13 +117,56 @@ public class increasestat : MonoBehaviour
                 biorem3.MaxHealth++;
                 biorem3.Health++;
                 BoughtCountHealth[w]++;
-            }
-            Money -= increaseCountPrice * (BoughtCountCount[w] + 1);
-            EventSystem.current.currentSelectedGameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Cost : " + (increaseHealthPrice * (BoughtCountCount[w] + 1)).ToString();
+            }            
+            EventSystem.current.currentSelectedGameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Cost : " + (increaseCountPrice * (BoughtCountCount[w] + 1)).ToString();
         }
         else
         {
             transform.GetComponent<AudioSource>().Play();
+        }
+    }
+
+    public void IncreaseDamage(int w)
+    {
+
+        if (Money >= increaseDamagePrice * (BoughtCountDamage[w] + 1))
+        {
+            Money -= increaseDamagePrice * (BoughtCountDamage[w] + 1);
+            if (w == 0)
+            {
+                biorem1.Damage++;
+                BoughtCountDamage[w]++;
+            }
+            else if (w == 1)
+            {
+                biorem2.Strength++;
+                BoughtCountDamage[w]++;
+            }
+            else
+            {
+                biorem3.Damage++;
+                BoughtCountDamage[w]++;
+            }
+            EventSystem.current.currentSelectedGameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Cost : " + (increaseDamagePrice * (BoughtCountDamage[w] + 1)).ToString();
+        }
+        else
+        {
+            transform.GetComponent<AudioSource>().Play();
+        }
+    }
+
+    public void GlobalUpgrade(int n)
+    {
+        switch (n)
+        {
+            case 0:
+                //global Upgrade 1
+                EventSystem.current.currentSelectedGameObject.GetComponent<Button>().enabled = false;
+                break;
+            case 1:
+                //global Upgrade 2
+                EventSystem.current.currentSelectedGameObject.GetComponent<Button>().enabled = false;
+                break;
         }
     }
 

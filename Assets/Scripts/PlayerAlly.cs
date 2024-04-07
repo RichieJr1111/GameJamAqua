@@ -8,6 +8,7 @@ public class PlayerAlly : MonoBehaviour
     public float Speed = 3f;
     public float MaxHealth = 3f;
     public float Health = 3f;
+    public float Damage = 1f;
     private bool isAttacking = false;
     // Start is called before the first frame update
     void Start()
@@ -81,17 +82,20 @@ public class PlayerAlly : MonoBehaviour
 
     private IEnumerator Attack(GameObject beingAttacked)
     {
-        GetComponent<AudioSource>().Play();
-        transform.GetComponent<Animator>().SetBool("isAttacking", true);
-        yield return new WaitForSeconds(1f);
-        transform.GetComponent<Animator>().SetBool("isAttacking", false);
-        isAttacking = false;
-        if (Health > 0)
+        if (gameObject.name.Substring(0,5) == "Ally1".Substring(0, 5))
         {
-            beingAttacked.GetComponent<BadChemicals>().Heatlh--; //might have diff sciprts add switch statement later
-            if (beingAttacked.GetComponent<BadChemicals>().Heatlh < 0)
+            GetComponent<AudioSource>().Play();
+            transform.GetComponent<Animator>().SetBool("isAttacking", true);
+            yield return new WaitForSeconds(0.5f);
+            transform.GetComponent<Animator>().SetBool("isAttacking", false);
+            isAttacking = false;
+            if (Health > 0)
             {
-                beingAttacked.GetComponent<BadChemicals>().Heatlh = 0;
+                beingAttacked.GetComponent<BadChemicals>().Heatlh -= Damage;
+                if (beingAttacked.GetComponent<BadChemicals>().Heatlh < 0)
+                {
+                    beingAttacked.GetComponent<BadChemicals>().Heatlh = 0;
+                }
             }
         }
     }
