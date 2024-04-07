@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class increasestat : MonoBehaviour
 {
@@ -20,8 +21,12 @@ public class increasestat : MonoBehaviour
     public GameObject[] EnemyPrefabs;
     public GameObject SpeedUpButtons;
     public JukeBox Jukebox;
-    public static int increaseHealthPrice = 0;
-    public TextMeshProUGUI cost1;
+    public int increaseHealthPrice = 5;
+    public int increaseCountPrice = 5;
+    public GameObject[] UpgradeTabs;
+    public int[] BoughtCountHealth;
+    public int[] BoughtCountCount;
+    //public TextMeshProUGUI cost1;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,17 +64,71 @@ public class increasestat : MonoBehaviour
         }
     }
 
-    public void IncreaseHealth()
+    public void IncreaseHealth(int w)
     {
-        
-        if (Money > 5 + increaseHealthPrice)
+
+        if (Money > increaseHealthPrice * (BoughtCountHealth[w] + 1))
         {
-            biorem1.MaxHealth++;
-            biorem1.Health++;
-            increaseHealthPrice++;
-            Money = Money -5;
-            cost1.text = "Cost : " + (5 + increaseHealthPrice);
+            if (w == 0)
+            {
+                biorem1.MaxHealth++;
+                biorem1.Health++;
+                BoughtCountHealth[w]++;
+            }
+            else
+            {
+                biorem3.MaxHealth++;
+                biorem3.Health++;
+                BoughtCountHealth[w]++;
+            }
+            Money -= increaseHealthPrice * (BoughtCountHealth[w] + 1);
+            EventSystem.current.currentSelectedGameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Cost : " + (increaseHealthPrice * (BoughtCountHealth[w] + 1)).ToString();
         }
+        else
+        {
+            transform.GetComponent<AudioSource>().Play();
+        }
+    }
+
+    public void IncreaseCount(int w)
+    {
+
+        if (Money > increaseCountPrice * (BoughtCountCount[w] + 1))
+        {
+            if (w == 0)
+            {
+                SpawnerObj.GetComponent<PlayerSpawner>().maxCount1++;
+                SpawnerObj.GetComponent<PlayerSpawner>().currentCount1++;
+                BoughtCountCount[w]++;
+            }
+            else if (w == 1)
+            {
+                SpawnerObj.GetComponent<PlayerSpawner>().maxCount2++;
+                SpawnerObj.GetComponent<PlayerSpawner>().currentCount2++;
+                BoughtCountCount[w]++;
+            }
+            else
+            {
+                biorem3.MaxHealth++;
+                biorem3.Health++;
+                BoughtCountHealth[w]++;
+            }
+            Money -= increaseCountPrice * (BoughtCountCount[w] + 1);
+            EventSystem.current.currentSelectedGameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Cost : " + (increaseHealthPrice * (BoughtCountCount[w] + 1)).ToString();
+        }
+        else
+        {
+            transform.GetComponent<AudioSource>().Play();
+        }
+    }
+
+    public void WhichUpgradeTab(int a)
+    {
+        UpgradeTabs[0].SetActive(false);
+        UpgradeTabs[1].SetActive(false);
+        UpgradeTabs[2].SetActive(false);
+        UpgradeTabs[3].SetActive(false);
+        UpgradeTabs[a].SetActive(true);
     }
 
     public void NextLevel()
