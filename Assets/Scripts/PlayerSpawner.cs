@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class PlayerSpawner : MonoBehaviour
@@ -15,13 +16,24 @@ public class PlayerSpawner : MonoBehaviour
     public TextMeshProUGUI c1;
     public TextMeshProUGUI c2;
     public TextMeshProUGUI c3;
+    public GameObject FadeObj;
     // Start is called before the first frame update
     void Start()
     {
         currentCount1 = maxCount1;
         currentCount2 = maxCount2;
         Jukebox = GameObject.Find("Jukebox").GetComponent<JukeBox>();
+        StartCoroutine(Transition());
         //rb = GetComponent<Rigidbody2D>();
+    }
+
+    private IEnumerator Transition()
+    {
+        for (int i = 0; i < 100; i++)
+        {
+            FadeObj.GetComponent<Image>().color -= new Color(0, 0, 0, 0.01f);
+            yield return new WaitForSeconds(0.01f);
+        }
     }
 
     public void Reset()
