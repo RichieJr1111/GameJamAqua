@@ -1903,7 +1903,6 @@ GameObject:
   - component: {fileID: 888382667}
   - component: {fileID: 888382669}
   - component: {fileID: 888382671}
-  - component: {fileID: 888382670}
   m_Layer: 0
   m_Name: b1
   m_TagString: Untagged
@@ -1992,51 +1991,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 0.3
   dest: {x: 0, y: 0, z: 0}
---- !u!61 &888382670
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 888382666}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.1377778, y: 1.1377778}
-    newSize: {x: 10.24, y: 10.24}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.1377778, y: 1.1377778}
-  m_EdgeRadius: 0
 --- !u!50 &888382671
 Rigidbody2D:
   serializedVersion: 4
@@ -3601,7 +3555,6 @@ GameObject:
   - component: {fileID: 1411053818}
   - component: {fileID: 1411053821}
   - component: {fileID: 1411053823}
-  - component: {fileID: 1411053822}
   m_Layer: 0
   m_Name: b3_0
   m_TagString: Untagged
@@ -3711,51 +3664,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 0.3
   dest: {x: 0, y: 0, z: 0}
---- !u!61 &1411053822
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1411053817}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.28444445, y: 0.44444445}
-    newSize: {x: 2.56, y: 4}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.28444445, y: 0.44444445}
-  m_EdgeRadius: 0
 --- !u!50 &1411053823
 Rigidbody2D:
   serializedVersion: 4
@@ -4217,7 +4125,6 @@ GameObject:
   - component: {fileID: 1533373114}
   - component: {fileID: 1533373117}
   - component: {fileID: 1533373119}
-  - component: {fileID: 1533373118}
   m_Layer: 0
   m_Name: b4_0
   m_TagString: Untagged
@@ -4327,51 +4234,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 0.3
   dest: {x: 0, y: 0, z: 0}
---- !u!61 &1533373118
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1533373113}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.194, y: 0.19404739}
-    newSize: {x: 0.97, y: 0.97023696}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.194, y: 0.19404739}
-  m_EdgeRadius: 0
 --- !u!50 &1533373119
 Rigidbody2D:
   serializedVersion: 4
@@ -4842,7 +4704,6 @@ GameObject:
   - component: {fileID: 1712869352}
   - component: {fileID: 1712869354}
   - component: {fileID: 1712869356}
-  - component: {fileID: 1712869355}
   m_Layer: 0
   m_Name: b2
   m_TagString: Untagged
@@ -4931,51 +4792,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 0.3
   dest: {x: 0, y: 0, z: 0}
---- !u!61 &1712869355
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1712869351}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.1377778, y: 1.1377778}
-    newSize: {x: 10.24, y: 10.24}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.1377778, y: 1.1377778}
-  m_EdgeRadius: 0
 --- !u!50 &1712869356
 Rigidbody2D:
   serializedVersion: 4
