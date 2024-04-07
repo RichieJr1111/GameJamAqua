@@ -26,6 +26,7 @@ public class increasestat : MonoBehaviour
         biorem1 = bioremob1.transform.GetChild(0).gameObject.GetComponent<PlayerAlly>();
         biorem2 = bioremob2.GetComponent<GoodExploScript>();
         Jukebox = GameObject.Find("Jukebox").GetComponent<JukeBox>();
+        Camera.main.transform.position = new Vector3(0, 0, -10);
     }
 
     // Update is called once per frame
@@ -35,19 +36,20 @@ public class increasestat : MonoBehaviour
         MoneyTXT.text = "Research Points: " + Money.ToString();
         MoneyTXT2.text = "Research Points: " + Money.ToString();
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if (enemies.Length <= 0 && Camera.main.transform.position.y >= 0)
+        if (enemies.Length <= 0)
         {
             Time.timeScale = 0;
-            //Camera.main.transform.position += Vector3.Lerp(new Vector3(0, 0, -10), new Vector3(0, 22, -10), 0.01f) * Time.deltaTime;
+            Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, new Vector3(0, 22, -10), 2f * Time.unscaledDeltaTime);
+            Debug.Log(Time.deltaTime);
             GameObject[] goodGuys = GameObject.FindGameObjectsWithTag("GoodGuy");
             foreach (GameObject a in goodGuys)
             {
                 Destroy(a.transform.parent.gameObject, 0.1f);
             }
         }
-        else if(Camera.main.transform.position.y >= 0)
+        else
         {
-            //Camera.main.transform.position += Vector3.Lerp(new Vector3(0, 22, -10), new Vector3(0, 0, -10), 0.01f) * Time.deltaTime;
+            Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, new Vector3(0, 0, -10), 2f * Time.unscaledDeltaTime);
         }
     }
 
