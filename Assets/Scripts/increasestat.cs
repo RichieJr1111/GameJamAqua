@@ -368,7 +368,7 @@ public class increasestat : MonoBehaviour
                             temp2.GetComponent<BadChemicals>().MaxHeatlh /= 2f;
                         }
                     }
-                    for (int i = 0; i < 15; i++)
+                    for (int i = 0; i < 10; i++)
                     {
                         GameObject temp2 = Instantiate(EnemyPrefabs[2]);
                         temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
@@ -389,7 +389,7 @@ public class increasestat : MonoBehaviour
                         }
                         EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().MaxHeatlh++;
                         EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
-                        for (int i = 0; i < Level + 2; i++)
+                        for (int i = 0; i < Level + 1; i++)
                         {
                             GameObject temp2 = Instantiate(EnemyPrefabs[0]);
                             temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
@@ -399,7 +399,7 @@ public class increasestat : MonoBehaviour
                                 temp2.GetComponent<BadChemicals>().MaxHeatlh /= 2f;
                             }
                         }
-                        for (int i = 0; i < Level + 2; i++)
+                        for (int i = 0; i < Level + 1; i++)
                         {
                             GameObject temp2 = Instantiate(EnemyPrefabs[1]);
                             temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
@@ -409,7 +409,7 @@ public class increasestat : MonoBehaviour
                                 temp2.GetComponent<BadChemicals>().MaxHeatlh /= 2f;
                             }
                         }
-                        for (int i = 0; i < Level + 2; i++)
+                        for (int i = 0; i < Level + 1; i++)
                         {
                             GameObject temp2 = Instantiate(EnemyPrefabs[2]);
                             temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
