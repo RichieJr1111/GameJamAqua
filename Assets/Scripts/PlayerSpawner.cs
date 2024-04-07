@@ -90,6 +90,19 @@ public class PlayerSpawner : MonoBehaviour
                         //play error sound effect
                     }
                     break;
+                case ("Ally3"):
+                    if (currentCount3 > 0)
+                    {
+                        currentCount3--;
+                        GameObject temp = Instantiate(selected, Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0)), selected.transform.rotation);
+                        temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y, 0);
+                    }
+                    else
+                    {
+                        GetComponent<AudioSource>().Play();
+                        //play error sound effect
+                    }
+                    break;
             }
             Jukebox = GameObject.Find("Jukebox").GetComponent<JukeBox>();
             Jukebox.WhatShouldPlay();
@@ -119,6 +132,17 @@ public class PlayerSpawner : MonoBehaviour
                 break;
             case ("GoodExplosion"):
                 if (currentCount2 > 0)
+                {
+                    selected = ally;
+                }
+                else
+                {
+                    GetComponent<AudioSource>().Play();
+                    //play error sound effect
+                }
+                break;
+            case ("Ally3"):
+                if (currentCount3 > 0)
                 {
                     selected = ally;
                 }

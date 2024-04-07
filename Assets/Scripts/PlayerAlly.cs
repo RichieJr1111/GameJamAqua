@@ -60,8 +60,11 @@ public class PlayerAlly : MonoBehaviour
         Vector3 objectPos = transform.position;
         lookTarg.x = lookTarg.x - objectPos.x;
         lookTarg.y = lookTarg.y - objectPos.y;
-
         float angle = Mathf.Atan2(lookTarg.y, lookTarg.x) * Mathf.Rad2Deg - 90;
+        if (gameObject.name.Substring(0, 5) == "Ally3".Substring(0, 5))
+        {
+            angle = Mathf.Atan2(lookTarg.y, lookTarg.x) * Mathf.Rad2Deg - 220f;
+        }
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
         rb.velocity = Vector2.ClampMagnitude(rb.velocity, Speed);
@@ -114,7 +117,7 @@ public class PlayerAlly : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
             if (Health > 0)
             {
-                GameObject temp = Instantiate(Ally3Attack, transform.position + (2f * transform.up), transform.rotation);
+                GameObject temp = Instantiate(Ally3Attack, transform.position + (2f * (transform.up + -transform.right)), transform.rotation);
                 temp.GetComponent<GoodExploScript>().Strength = Damage;
             }
             yield return new WaitForSeconds(1.5f);

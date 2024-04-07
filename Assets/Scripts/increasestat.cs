@@ -61,9 +61,9 @@ public class increasestat : MonoBehaviour
                 Destroy(a.transform.parent.gameObject);
             }
             GameObject[] Explo = GameObject.FindGameObjectsWithTag("Explo");
-            foreach (GameObject a in Explo)
+            foreach (GameObject b in Explo)
             {
-                Destroy(a.transform.parent.gameObject);
+                Destroy(b);
             }
             Time.timeScale = 0;
         }
