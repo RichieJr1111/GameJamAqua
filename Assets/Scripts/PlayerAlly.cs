@@ -29,6 +29,7 @@ public class PlayerAlly : MonoBehaviour
         if (enemies.Length <= 0)
         {
             closestEnemy = gameObject;
+            GameObject.Find("Jukebox").GetComponent<JukeBox>().WhatShouldPlay();
         }
         else
         {

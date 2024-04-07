@@ -16,7 +16,7 @@ public class JukeBox : MonoBehaviour
     // Update is called once per frame
     public void WhatShouldPlay()
     {
-        if (Time.timeScale <= 0 && Shop.volume == 0f)
+        if (Time.timeScale <= 0.5f && Shop.volume == 0f)
         {
             //play shop
             //Shop.mute = false;
@@ -24,7 +24,7 @@ public class JukeBox : MonoBehaviour
             //Plan.mute = true;
             StartCoroutine(SlowTransition(false, true, true));
         }
-        else if (GameObject.FindGameObjectWithTag("GoodGuy") == null && Plan.volume == 0f)
+        else if (GameObject.FindGameObjectWithTag("GoodGuy") == null && Plan.volume == 0f && Time.timeScale > 0.25f)
         {
             //play plan
             //Battle.mute = true;
@@ -32,7 +32,7 @@ public class JukeBox : MonoBehaviour
             //Shop.mute = true;
             StartCoroutine(SlowTransition(true, false, true));
         }
-        else if(Battle.volume == 0f)
+        else if(Battle.volume == 0f && Time.timeScale > 0.25f)
         {
             //play battle
             //Plan.mute = true;
@@ -50,18 +50,21 @@ public class JukeBox : MonoBehaviour
             {
                 Shop.volume += 0.01f;
                 Battle.volume -= 0.01f;
+                Plan.volume -= 0.01f;
             }
             else if (!two)
             {
                 Plan.volume += 0.01f;
+                Battle.volume -= 0.01f;
                 Shop.volume -= 0.01f;
             }
             else if (!three)
             {
                 Plan.volume -= 0.01f;
                 Battle.volume += 0.01f;
+                Shop.volume -= 0.01f;
             }
-            yield return new WaitForSeconds(0.015f);
+            yield return new WaitForSecondsRealtime(0.015f);
         }
     }
 }
