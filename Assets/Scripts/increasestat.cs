@@ -38,14 +38,18 @@ public class increasestat : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         if (enemies.Length <= 0)
         {
-            Time.timeScale = 0;
             Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, new Vector3(0, 22, -10), 2f * Time.unscaledDeltaTime);
-            Debug.Log(Time.deltaTime);
             GameObject[] goodGuys = GameObject.FindGameObjectsWithTag("GoodGuy");
             foreach (GameObject a in goodGuys)
             {
                 Destroy(a.transform.parent.gameObject, 0.1f);
             }
+            GameObject[] Explo = GameObject.FindGameObjectsWithTag("Explo");
+            foreach (GameObject a in Explo)
+            {
+                Destroy(a.transform.parent.gameObject, 0.1f);
+            }
+            Time.timeScale = 0;
         }
         else
         {

@@ -22,12 +22,22 @@ public class BadChemicals : MonoBehaviour
     {
         float randY = Random.Range(-5f, 5f);
         float randX = Random.Range(-8.5f, 8.5f);
+        dest = new Vector3(randX, randY, 0);
+        Debug.Log("1: " + randX);
+        Debug.Log("1: " + randY);
         while (!(!(randX < -3 && randY < -3) && !(randX > 6 && randY < -3))) // x -3 to - 9 , y = -3 to - 5
         {
             randY = Random.Range(-5f, 5f);
             randX = Random.Range(-8.5f, 8.5f);
             dest = new Vector3(randX, randY, 0);
+            if (dest == new Vector3(0, 0, 0))
+            {
+                randY = Random.Range(-5f, 5f);
+                randX = Random.Range(-8.5f, 8.5f);
+            }
         }
+        Debug.Log(randX);
+        Debug.Log(randY);
         transform.position = dest;
     }
 
@@ -35,12 +45,22 @@ public class BadChemicals : MonoBehaviour
     {
         float randY = Random.Range(-5f, 5f);
         float randX = Random.Range(-8.5f, 8.5f);
+        dest = new Vector3(randX, randY, 0);
+        Debug.Log("1: " + randX);
+        Debug.Log("1: " + randY);
         while (!(!(randX < -3 && randY < -3) && !(randX > 6 && randY < -3))) // x -3 to - 9 , y = -3 to - 5
         {
             randY = Random.Range(-5f, 5f);
             randX = Random.Range(-8.5f, 8.5f);
             dest = new Vector3(randX, randY, 0);
+            if (dest == new Vector3(0, 0, 0))
+            {
+                randY = Random.Range(-5f, 5f);
+                randX = Random.Range(-8.5f, 8.5f);
+            }
         }
+        Debug.Log(randX);
+        Debug.Log(randY);
         yield return new WaitUntil(() => new Vector3(Mathf.Round(dest.x), Mathf.Round(dest.y), Mathf.Round(dest.z)) == new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), Mathf.Round(transform.position.z)));
         //yield return new WaitForSeconds(1f);
         StartCoroutine(GoDestMakeDest());
