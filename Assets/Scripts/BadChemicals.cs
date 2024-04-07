@@ -144,7 +144,14 @@ public class BadChemicals : MonoBehaviour
         transform.parent.GetComponent<AudioSource>().Play();
         transform.GetComponent<Animator>().SetBool("isDead", true);
         gameObject.tag = "Untagged";
-        increasestat.Money++;
+        if (gameObject.transform.parent.name.Substring(0,6) == "Enemy1".Substring(0, 6))
+        {
+            increasestat.Money++;
+        }
+        else
+        {
+            increasestat.Money += 2;
+        }
         yield return new WaitForSeconds(1f);
         Destroy(transform.parent.gameObject);
     }

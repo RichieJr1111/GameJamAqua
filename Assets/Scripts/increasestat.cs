@@ -89,28 +89,24 @@ public class increasestat : MonoBehaviour
             {
                 biorem1.MaxHealth++;
                 biorem1.Health++;
-                if (BoughtCountHealth[w] == 0)
-                    BoughtCountHealth[w] += 2;
-                else
-                    BoughtCountHealth[w] *= 2;
+                BoughtCountHealth[w] += 1;
                 if (GlobalTwo)
                 {
                     biorem1.MaxHealth++;
                     biorem1.Health++;
+                    BoughtCountHealth[w] += 1;
                 }
             }
             else
             {
                 biorem3.MaxHealth++;
                 biorem3.Health++;
-                if(BoughtCountHealth[w] == 0)
-                    BoughtCountHealth[w]+= 2;
-                else
-                    BoughtCountHealth[w] *= 2;
+                BoughtCountHealth[w]+= 1;
                 if (GlobalTwo)
                 {
                     biorem3.MaxHealth++;
                     biorem3.Health++;
+                    BoughtCountHealth[w] += 1;
                 }
             }
             EventSystem.current.currentSelectedGameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Cost : " + (increaseHealthPrice * (BoughtCountHealth[w] + 1)).ToString();
@@ -131,28 +127,19 @@ public class increasestat : MonoBehaviour
             {
                 SpawnerObj.GetComponent<PlayerSpawner>().maxCount1++;
                 SpawnerObj.GetComponent<PlayerSpawner>().currentCount1++;
-                if (BoughtCountCount[w] == 0)
-                    BoughtCountCount[w] += 2;
-                else
-                    BoughtCountCount[w] *= 2;
+                BoughtCountCount[w] += 1;
             }
             else if (w == 1)
             {
                 SpawnerObj.GetComponent<PlayerSpawner>().maxCount2++;
                 SpawnerObj.GetComponent<PlayerSpawner>().currentCount2++;
-                if (BoughtCountCount[w] == 0)
-                    BoughtCountCount[w] += 2;
-                else
-                    BoughtCountCount[w] *= 2;
+                BoughtCountCount[w] += 1;
             }
             else
             {
                 SpawnerObj.GetComponent<PlayerSpawner>().maxCount3++;
                 SpawnerObj.GetComponent<PlayerSpawner>().currentCount3++;
-                if (BoughtCountCount[w] == 0)
-                    BoughtCountCount[w] += 2;
-                else
-                    BoughtCountCount[w] *= 2;
+                BoughtCountCount[w] += 1;
             }            
             EventSystem.current.currentSelectedGameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Cost : " + (increaseCountPrice * (BoughtCountCount[w] + 1)).ToString();
         }
@@ -171,10 +158,7 @@ public class increasestat : MonoBehaviour
             if (w == 0)
             {
                 biorem1.Damage++;
-                if (BoughtCountDamage[w] == 0)
-                    BoughtCountDamage[w] += 2;
-                else
-                    BoughtCountDamage[w] *= 2;
+                BoughtCountDamage[w] += 1;
                 if (GlobalOne)
                 {
                     biorem1.Damage++;
@@ -184,10 +168,7 @@ public class increasestat : MonoBehaviour
             else if (w == 1)
             {
                 biorem2.Strength++;
-                if (BoughtCountDamage[w] == 0)
-                    BoughtCountDamage[w] += 2;
-                else
-                    BoughtCountDamage[w] *= 2;
+                BoughtCountDamage[w] += 1;
                 if (GlobalOne)
                 {
                     biorem2.Strength++;
@@ -197,10 +178,7 @@ public class increasestat : MonoBehaviour
             else
             {
                 biorem3.Damage++;
-                if (BoughtCountDamage[w] == 0)
-                    BoughtCountDamage[w] += 2;
-                else
-                    BoughtCountDamage[w] *= 2;
+                BoughtCountDamage[w] += 1;
                 if (GlobalOne)
                 {
                     biorem3.Damage++;

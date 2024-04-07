@@ -54,7 +54,9 @@ public class PlayerSpawner : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
+            increasestat.Money = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            increasestat.Money = 0;
         }
         c1.text = currentCount1.ToString();
         c2.text = currentCount2.ToString();
