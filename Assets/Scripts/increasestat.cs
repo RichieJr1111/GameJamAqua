@@ -151,7 +151,7 @@ public class increasestat : MonoBehaviour
             {
                 biorem1.Damage++;
                 BoughtCountDamage[w]++;
-                if (GlobalTwo)
+                if (GlobalOne)
                 {
                     biorem1.Damage++;
                     BoughtCountDamage[w]++;
@@ -161,7 +161,7 @@ public class increasestat : MonoBehaviour
             {
                 biorem2.Strength++;
                 BoughtCountDamage[w]++;
-                if (GlobalTwo)
+                if (GlobalOne)
                 {
                     biorem2.Strength++;
                     BoughtCountDamage[w]++;
@@ -171,7 +171,7 @@ public class increasestat : MonoBehaviour
             {
                 biorem3.Damage++;
                 BoughtCountDamage[w]++;
-                if (GlobalTwo)
+                if (GlobalOne)
                 {
                     biorem3.Damage++;
                     BoughtCountDamage[w]++;
@@ -281,13 +281,19 @@ public class increasestat : MonoBehaviour
                         temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
                         if (GlobalThree)
                         {
-                            //temp2.
+                            temp2.GetComponent<BadChemicals>().Heatlh /= 2f;
+                            temp2.GetComponent<BadChemicals>().MaxHeatlh /= 2f;
                         }
                     }
                     for (int i = 0; i < 5; i++)
                     {
                         GameObject temp2 = Instantiate(EnemyPrefabs[1]);
                         temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
+                        if (GlobalThree)
+                        {
+                            temp2.GetComponent<BadChemicals>().Heatlh /= 2f;
+                            temp2.GetComponent<BadChemicals>().MaxHeatlh /= 2f;
+                        }
                     }
                     break;
                 case 3:
@@ -295,6 +301,11 @@ public class increasestat : MonoBehaviour
                     {
                         GameObject temp2 = Instantiate(EnemyPrefabs[0]);
                         temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
+                        if (GlobalThree)
+                        {
+                            temp2.GetComponent<BadChemicals>().Heatlh /= 2f;
+                            temp2.GetComponent<BadChemicals>().MaxHeatlh /= 2f;
+                        }
                     }
                     EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().MaxHeatlh++;
                     EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
@@ -302,11 +313,21 @@ public class increasestat : MonoBehaviour
                     {
                         GameObject temp2 = Instantiate(EnemyPrefabs[1]);
                         temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
+                        if (GlobalThree)
+                        {
+                            temp2.GetComponent<BadChemicals>().Heatlh /= 2f;
+                            temp2.GetComponent<BadChemicals>().MaxHeatlh /= 2f;
+                        }
                     }
                     for (int i = 0; i < 5; i++)
                     {
                         GameObject temp2 = Instantiate(EnemyPrefabs[2]);
                         temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
+                        if (GlobalThree)
+                        {
+                            temp2.GetComponent<BadChemicals>().Heatlh /= 2f;
+                            temp2.GetComponent<BadChemicals>().MaxHeatlh /= 2f;
+                        }
                     }
                     break;
                 case 4:
@@ -314,6 +335,11 @@ public class increasestat : MonoBehaviour
                     {
                         GameObject temp2 = Instantiate(EnemyPrefabs[0]);
                         temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
+                        if (GlobalThree)
+                        {
+                            temp2.GetComponent<BadChemicals>().Heatlh /= 2f;
+                            temp2.GetComponent<BadChemicals>().MaxHeatlh /= 2f;
+                        }
                     }
                     EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().MaxHeatlh++;
                     EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
@@ -321,11 +347,21 @@ public class increasestat : MonoBehaviour
                     {
                         GameObject temp2 = Instantiate(EnemyPrefabs[1]);
                         temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
+                        if (GlobalThree)
+                        {
+                            temp2.GetComponent<BadChemicals>().Heatlh /= 2f;
+                            temp2.GetComponent<BadChemicals>().MaxHeatlh /= 2f;
+                        }
                     }
                     for (int i = 0; i < 15; i++)
                     {
                         GameObject temp2 = Instantiate(EnemyPrefabs[2]);
                         temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
+                        if (GlobalThree)
+                        {
+                            temp2.GetComponent<BadChemicals>().Heatlh /= 2f;
+                            temp2.GetComponent<BadChemicals>().MaxHeatlh /= 2f;
+                        }
                     }
                     EnemyPrefabs[2].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().MaxHeatlh++;
                     EnemyPrefabs[2].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
@@ -337,6 +373,11 @@ public class increasestat : MonoBehaviour
                         {
                             GameObject temp2 = Instantiate(EnemyPrefabs[0]);
                             temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
+                            if (GlobalThree)
+                            {
+                                temp2.GetComponent<BadChemicals>().Heatlh /= 2f;
+                                temp2.GetComponent<BadChemicals>().MaxHeatlh /= 2f;
+                            }
                         }
                         EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().MaxHeatlh++;
                         EnemyPrefabs[0].transform.GetChild(0).gameObject.GetComponent<BadChemicals>().Heatlh++;
@@ -344,11 +385,21 @@ public class increasestat : MonoBehaviour
                         {
                             GameObject temp2 = Instantiate(EnemyPrefabs[1]);
                             temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
+                            if (GlobalThree)
+                            {
+                                temp2.GetComponent<BadChemicals>().Heatlh /= 2f;
+                                temp2.GetComponent<BadChemicals>().MaxHeatlh /= 2f;
+                            }
                         }
                         for (int i = 0; i < Level + 10; i++)
                         {
                             GameObject temp2 = Instantiate(EnemyPrefabs[2]);
                             temp2.transform.GetChild(0).gameObject.GetComponent<BadChemicals>().RandomSpawn();
+                            if (GlobalThree)
+                            {
+                                temp2.GetComponent<BadChemicals>().Heatlh /= 2f;
+                                temp2.GetComponent<BadChemicals>().MaxHeatlh /= 2f;
+                            }
                         }
                         if (Level % 2 == 0)
                         {
