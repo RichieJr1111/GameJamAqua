@@ -3802,7 +3802,7 @@ MonoBehaviour:
   currentCount1: 0
   maxCount1: 3
   currentCount2: 0
-  maxCount2: 0
+  maxCount2: 3
   selected: {fileID: 0}
   Jukebox: {fileID: 0}
   c1: {fileID: 2121108036}

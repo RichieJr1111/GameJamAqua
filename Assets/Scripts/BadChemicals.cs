@@ -85,6 +85,7 @@ public class BadChemicals : MonoBehaviour
 
     private IEnumerator Attack(GameObject beingAttacked)
     {
+        GetComponent<AudioSource>().Play();
         transform.GetComponent<Animator>().SetBool("isAttacking", true);
         yield return new WaitForSeconds(1f);
         transform.GetComponent<Animator>().SetBool("isAttacking", false);
