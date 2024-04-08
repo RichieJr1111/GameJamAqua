@@ -251,6 +251,7 @@ public class increasestat : MonoBehaviour
                 if (Money >= 1000)
                 {
                     //win the game
+                    SceneManager.LoadScene("VictoryScene");
                     EventSystem.current.currentSelectedGameObject.GetComponent<Button>().image = Disabled;
                     EventSystem.current.currentSelectedGameObject.GetComponent<Button>().enabled = false;
                 }
